@@ -43,3 +43,26 @@
     background-size: cover;
     margin-bottom: 1px;
 }
+
+.support-container {
+    position: relative;
+}
+
+.support-menu {
+    display: none;
+    position: absolute;
+    border: 1px solid rgb(221, 221, 221);
+    width: 130px;
+    right: 0px;
+    padding: 3px 9px;
+}
+
+.support-container:hover .support-menu {
+    display: block;
+}
+
+.support-menu-item {
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+}
