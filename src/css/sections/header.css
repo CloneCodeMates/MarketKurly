@@ -1,0 +1,45 @@
+.header-container {
+    width: 1050px;
+    height: 100px;
+    margin: 0px auto;
+}
+
+.header-topbar {
+    font-size: 12px;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: end;
+    line-height: 35px;
+    align-items: center;
+}
+
+.signup {
+    color: rgb(95, 0, 128);
+    cursor: pointer;
+}
+
+.divider {
+    width: 1px;
+    height: 13px;
+    margin: 0px 12px;
+    background-color: rgb(217, 217, 217);
+}
+
+.login {
+    cursor: pointer;
+}
+
+.support {
+    cursor: pointer;
+}
+
+.down-arrow {
+    display: inline-block;
+    width: 8px;
+    height: 5px;
+    background-image: url(/src/assets/images/support-down-arrow.png);
+    background-size: cover;
+    margin-bottom: 1px;
+}
