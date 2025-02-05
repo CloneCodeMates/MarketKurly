@@ -1,1 +1,46 @@
 /* footer.css */
+footer {
+    background-color: aquamarine;
+    height: 531.833px;
+    padding-top: 30px;
+}
+
+.footer-inner {
+    background-color: aqua;
+    width: 1050px;
+    height: 429.833px;
+    margin: 0 auto;
+}
+
+.footer-inner-top {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.footer-inner-top-left {
+    background-color: darkblue;
+    width: 423.292px;
+    height: 296.667px;
+}
+
+.footer-inner-top-right {
+    background-color: darkblue;
+    width: 495.438px;
+    height: 296.667px;
+}
+
+.footer-inner-bottom {
+    background-color: darkgreen;
+    height: 43.500px;
+    display: flex;
+    justify-content: space-between;
+    padding: 26px 0 33px;
+}
+
+.footer-bottom {
+    height: 52px;
+    background-color: gray;
+    padding: 20px 0 30px;
+}
