@@ -1,37 +1,37 @@
-.header-container {
+.header {
     width: 1050px;
     height: 100px;
     margin: 0px auto;
 }
 
-.header-topbar {
+.header__topbar {
     font-size: 12px;
 }
 
-.header-menu {
+.header__topbar-menu {
     display: flex;
     justify-content: end;
     line-height: 35px;
     align-items: center;
 }
 
-.signup {
+.header__topbar-menu-signup {
     color: rgb(95, 0, 128);
     cursor: pointer;
 }
 
-.divider {
+.header__topbar-menu-divider {
     width: 1px;
     height: 13px;
     margin: 0px 12px;
     background-color: rgb(217, 217, 217);
 }
 
-.login {
+.header__topbar-menu-login {
     cursor: pointer;
 }
 
-.support {
+.header__topbar-menu-support-link {
     cursor: pointer;
 }
 
@@ -44,11 +44,11 @@
     margin-bottom: 1px;
 }
 
-.support-container {
+.header__topbar-menu-support {
     position: relative;
 }
 
-.support-menu {
+.header__topbar-menu-support-dropdown {
     display: none;
     position: absolute;
     border: 1px solid rgb(221, 221, 221);
@@ -57,11 +57,11 @@
     padding: 3px 9px;
 }
 
-.support-container:hover .support-menu {
+.header__topbar-menu-support:hover .header__topbar-menu-support-dropdown {
     display: block;
 }
 
-.support-menu-item {
+.header__topbar-menu-support-dropdown-item {
     height: 24px;
     line-height: 24px;
     cursor: pointer;
