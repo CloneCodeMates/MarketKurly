@@ -5,6 +5,7 @@ footer {
     padding-top: 30px;
 }
 
+/* ----- .footer-inner ----- */
 .footer-inner {
     background-color: aqua;
     width: 1050px;
@@ -12,6 +13,7 @@ footer {
     margin: 0 auto;
 }
 
+/* --- .footer-inner-top --- */
 .footer-inner-top {
     background-color: aliceblue;
     display: flex;
@@ -19,18 +21,36 @@ footer {
     padding-bottom: 30px;
 }
 
-.footer-inner-top_customer-center {
-    background-color: darkblue;
-    width: 423.292px;
-    height: 296.667px;
+/* .customer-center */
+.customer-center__title {
+    margin: 0;
+    padding-bottom: 17px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
 }
 
+.customer-center__contact-tell {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.customer-center__contact-info {
+    margin-left: 8px;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/* .about-kurly */
 .footer-inner-top-right {
     background-color: darkblue;
     width: 495.438px;
     height: 296.667px;
 }
 
+/* --- .footer-inner-top --- */
 .footer-inner-bottom {
     background-color: darkgreen;
     height: 43.500px;
@@ -39,6 +59,7 @@ footer {
     padding: 26px 0 33px;
 }
 
+/* ----- .footer-inner ----- */
 .footer-bottom {
     height: 52px;
     background-color: gray;
