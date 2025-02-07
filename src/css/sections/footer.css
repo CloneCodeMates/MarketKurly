@@ -68,11 +68,35 @@ footer {
     color: rgb(153, 153, 153);
 }
 
-/*  */
-.footer-inner-top-right {
-    background-color: aliceblue;
-    width: 495.438px;
-    height: 296.667px;
+/* .about-kurly__info */
+.about-kurly__link {
+    display: flex;
+    width: 100%;
+    padding-bottom: 29px;
+}
+
+.about-kurly__link li {
+    margin-left: 14px;
+}
+
+.about-kurly__link li:first-child {
+    margin-left: 0px;
+}
+
+.about-kurly__info {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgb(153, 153, 153);
+    margin-bottom: 40px;
+}
+
+.about-kurly__social-media {
+    display: flex;
+}
+
+.about-kurly__social-media li {
+    margin-right: 10px;
 }
 
 /* --- .footer-inner-bottom --- */
