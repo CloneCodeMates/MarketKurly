@@ -1,5 +1,6 @@
 /* base: 공통으로 적용되는 스타일 모음 */
 body {
+    overflow: scroll;
     color: #333;
     font-family: 'Pretendard', 'malgun gothic', AppleGothic, sans-serif;
 }
