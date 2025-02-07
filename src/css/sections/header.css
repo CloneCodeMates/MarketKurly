@@ -4,15 +4,13 @@
     margin: 0px auto;
 }
 
-.header__topbar {
-    font-size: 12px;
-}
-
 .header__topbar-menu {
     display: flex;
     justify-content: end;
     line-height: 35px;
     align-items: center;
+    font-size: 12px;
+    letter-spacing: -0.4px;
 }
 
 .header__topbar-menu-signup {
@@ -42,6 +40,7 @@
     background-image: url(/src/assets/images/support-down-arrow.png);
     background-size: cover;
     margin-bottom: 1px;
+    margin-left: 3px;
 }
 
 .header__topbar-menu-support {
@@ -65,4 +64,46 @@
     height: 24px;
     line-height: 24px;
     cursor: pointer;
+}
+
+.header__utility {
+    /* background-color: antiquewhite; */
+    height: 63px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__utility-logo {
+    /* background-color: darksalmon; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header__utility-switch-market {
+    display: flex;
+}
+
+.header__utility-switch-kurly {
+    margin-left: 20px;
+    font-size: 18px;
+    color: rgb(181, 181, 181);
+}
+
+.header__utility-switch-kurly.active,
+.header__utility-switch-kurly:hover {
+    font-weight: 500;
+    color: rgb(95, 0, 128);
+}
+
+.header__utility-switch-kurly:last-child {
+    margin-left: 10px;
+}
+
+.header__utility-market-divider {
+    width: 1px;
+    height: 14px;
+    margin-top: 3px;
+    margin-left: 11px;
+    background-color: rgb(226, 226, 226);
 }

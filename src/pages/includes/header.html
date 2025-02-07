@@ -11,40 +11,58 @@
         <!-- 헤더 -->
         <header class="header">
             <!-- 상단바 -->
-            <div class="header__topbar">
-                <ul class="header__topbar-menu">
-                    <!-- 회원가입 -->
-                    <li>
-                        <a href="#" class="header__topbar-menu-signup">회원가입</a>
-                    </li>
-                    <div class="header__topbar-menu-divider"></div>
+            <ul class="header__topbar-menu">
+                <!-- 회원가입 -->
+                <li>
+                    <a href="#" class="header__topbar-menu-signup">회원가입</a>
+                </li>
+                <div class="header__topbar-menu-divider"></div>
 
-                    <!-- 로그인 -->
-                    <li>
-                        <a href="#" class="header__topbar-menu-login">로그인</a>
-                    </li>
-                    <div class="header__topbar-menu-divider"></div>
+                <!-- 로그인 -->
+                <li>
+                    <a href="#" class="header__topbar-menu-login">로그인</a>
+                </li>
+                <div class="header__topbar-menu-divider"></div>
 
-                    <!-- 고객센터 -->
-                    <li class="header__topbar-menu-support">
-                        <a href="#" class="header__topbar-menu-support-link">
-                            고객센터
-                            <span class="down-arrow"></span>
-                        </a>
-                        <ul class="header__topbar-menu-support-dropdown">
-                            <li class="header__topbar-menu-support-dropdown-item">공지사항</li>
-                            <li class="header__topbar-menu-support-dropdown-item">자주하는 질문</li>
-                            <li class="header__topbar-menu-support-dropdown-item">1:1 문의</li>
-                            <li class="header__topbar-menu-support-dropdown-item">대량주문 문의</li>
-                        </ul>
-                    </li>
+                <!-- 고객센터 -->
+                <li class="header__topbar-menu-support">
+                    <a href="#" class="header__topbar-menu-support-link">
+                        고객센터
+                        <span class="down-arrow"></span>
+                    </a>
+                    <ul class="header__topbar-menu-support-dropdown">
+                        <li class="header__topbar-menu-support-dropdown-item">공지사항</li>
+                        <li class="header__topbar-menu-support-dropdown-item">자주하는 질문</li>
+                        <li class="header__topbar-menu-support-dropdown-item">1:1 문의</li>
+                        <li class="header__topbar-menu-support-dropdown-item">대량주문 문의</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 헤더 유틸리티 -->
+            <div class="header__utility">
+                <!-- 로고 -->
+                <div class="header__utility-logo">
+                    <img src="/src/assets/icons/market-kurly-logo.svg" alt="마켓컬리 로고" />
+
+                    <!-- 마켓 변경 -->
+                    <div class="header__utility-switch-market">
+                        <a href="#" class="active header__utility-switch-kurly">마켓컬리</a>
+                        <div class="header__utility-market-divider"></div>
+                        <a href="#" class="header__utility-switch-kurly">뷰티컬리</a>
+                    </div>
+                </div>
+
+                <!-- 검색창 -->
+                <div class="header__utility-search"></div>
+
+                <!-- 헤더 유틸리티 메뉴 -->
+                <ul class="header__utility-menu">
+                    <li class="header__utility-menu-delivery"></li>
+                    <li class="header__utility-menu-favorites"></li>
+                    <li class="header__utility-menu-cart"></li>
                 </ul>
             </div>
-
-            <!-- 로고, 검색창, 장바구니 등 -->
-            <div class="header__utility"></div>
         </header>
-
-        <h1>TEST</h1>
     </body>
 </html>
