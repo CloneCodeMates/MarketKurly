@@ -6,3 +6,4 @@
 /* 각 기능을 sections 폴더에서 작업한 후, import 하기 */
 @import url(./sections/header.css);
 @import url(./sections/top-banner.css);
+@import url(./sections/footer.css);
