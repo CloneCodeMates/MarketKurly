@@ -1,6 +1,7 @@
 /* footer.css */
 footer {
     padding-top: 30px;
+    border-top: 1px solid #f7f7f7;
 }
 
 /* ----- .footer-inner ----- */
@@ -104,6 +105,7 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 26px 0 33px;
+    border-top: 1px solid #eee;
 }
 
 .footer-inner-bottom button {
