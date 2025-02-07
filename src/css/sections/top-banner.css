@@ -20,8 +20,15 @@
     margin: 0px auto;
     height: 100%;
     width: 100%;
+    padding-left: 42px;
 }
 
 .top-banner__text {
     color: white;
+}
+
+.top-banner__close-btn {
+    width: 42px;
+    height: 100%;
+    border: 0px;
 }
