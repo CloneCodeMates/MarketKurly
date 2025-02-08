@@ -137,3 +137,32 @@
     margin: 10px;
     bottom: 3px; */
 }
+
+.header__utility-user-menu {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.header__utility-user-menu-delivery,
+.header__utility-user-menu-favorites,
+.header__utility-user-menu-cart {
+    display: inline-block;
+    margin-top: 5px;
+    width: 36px;
+    height: 36px;
+}
+
+.header__utility-user-menu-delivery {
+    background-image: url(/src/assets/icons/header/delivery-location-icon.svg);
+    margin-right: 20px;
+}
+
+.header__utility-user-menu-favorites {
+    background-image: url(/src/assets/icons/header/heart-favorites-icon.svg);
+}
+
+.header__utility-user-menu-cart {
+    background-image: url(/src/assets/icons/header/cart-icon.svg);
+    margin-left: 20px;
+}
