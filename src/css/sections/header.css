@@ -71,6 +71,7 @@
     height: 63px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__utility-logo {
@@ -106,4 +107,33 @@
     margin-top: 3px;
     margin-left: 11px;
     background-color: rgb(226, 226, 226);
+}
+
+.header__utility-search {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    height: 48px;
+    padding-left: 14px;
+    border: 1px solid rgb(95, 0, 128);
+    border-radius: 6px;
+    background-color: white;
+    margin-left: -100px;
+}
+
+.header__utility-search__input {
+    border: 0;
+    width: 300px;
+    outline: none;
+    font-size: 16px;
+    letter-spacing: -0.33px;
+}
+
+.header__utility-search__button {
+    position: relative;
+    border: 0;
+    /* width: 30px;
+    height: 30px;
+    margin: 10px;
+    bottom: 3px; */
 }
