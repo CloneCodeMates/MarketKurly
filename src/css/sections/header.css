@@ -67,7 +67,6 @@
 }
 
 .header__utility {
-    /* background-color: antiquewhite; */
     height: 63px;
     display: flex;
     justify-content: space-between;
@@ -75,7 +74,6 @@
 }
 
 .header__utility-logo {
-    /* background-color: darksalmon; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -130,12 +128,12 @@
 }
 
 .header__utility-search__button {
-    position: relative;
     border: 0;
-    /* width: 30px;
-    height: 30px;
+    background: url(/src/assets/icons/header/search-icon.svg) no-repeat;
+    position: relative;
+    width: 30px;
     margin: 10px;
-    bottom: 3px; */
+    bottom: 3px;
 }
 
 .header__utility-user-menu {
