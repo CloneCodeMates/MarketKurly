@@ -113,10 +113,13 @@
     width: 400px;
     height: 48px;
     padding-left: 14px;
+    padding-top: 1px;
+    margin-top: 1px;
     border: 1px solid rgb(95, 0, 128);
     border-radius: 6px;
     background-color: white;
     margin-left: -100px;
+    box-sizing: border-box;
 }
 
 .header__utility-search__input {
@@ -125,6 +128,23 @@
     outline: none;
     font-size: 16px;
     letter-spacing: -0.33px;
+    margin-left: -2px;
+    color: #333333;
+}
+
+.header__utility-search__input::placeholder {
+    color: rgb(153, 153, 153); /* 원하는 색상으로 변경 */
+}
+
+/* 추후 입력이 있을 경우 버튼이 보이게 설정 */
+.header__utility-search__clear-input {
+    /* display: none; */
+    border: 0;
+    background: url(/src/assets/icons/header/delete-icon.svg) no-repeat;
+    width: 16px;
+    height: 16px;
+    margin-top: 14.5px;
+    margin-left: 20px;
 }
 
 .header__utility-search__button {
@@ -132,8 +152,9 @@
     background: url(/src/assets/icons/header/search-icon.svg) no-repeat;
     position: relative;
     width: 30px;
+    height: 30px;
     margin: 10px;
-    bottom: 3px;
+    bottom: 6px;
 }
 
 .header__utility-user-menu {
