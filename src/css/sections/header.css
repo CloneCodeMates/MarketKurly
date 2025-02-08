@@ -172,6 +172,12 @@
     height: 36px;
 }
 
+.header__utility-user-menu-delivery:hover,
+.header__utility-user-menu-favorites:hover,
+.header__utility-user-menu-cart:hover {
+    filter: invert(11%) sepia(100%) saturate(6000%) hue-rotate(286deg) brightness(55%) contrast(119%);
+}
+
 .header__utility-user-menu-delivery {
     background-image: url(/src/assets/icons/header/delivery-location-icon.svg);
     margin-right: 20px;
