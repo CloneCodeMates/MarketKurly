@@ -54,6 +54,8 @@
     width: 130px;
     right: 0px;
     padding: 3px 9px;
+    background-color: white;
+    box-sizing: border-box;
 }
 
 .header__topbar-menu-support:hover .header__topbar-menu-support-dropdown {
@@ -133,7 +135,7 @@
 }
 
 .header__utility-search__input::placeholder {
-    color: rgb(153, 153, 153); /* 원하는 색상으로 변경 */
+    color: rgb(153, 153, 153);
 }
 
 /* 추후 입력이 있을 경우 버튼이 보이게 설정 */
