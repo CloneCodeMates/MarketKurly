@@ -8,16 +8,13 @@
 #event-container {
     height: 100%;
     width: 100%;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     position: relative;
 }
 
 #event-link {
-    display: block;
     height: 100%;
-    width: 100%;
 }
 
 #event-image {
