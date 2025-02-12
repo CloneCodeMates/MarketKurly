@@ -1,4 +1,5 @@
 #nav {
+    margin-top: 100px;
     min-width: 1050px;
     letter-spacing: -0.3px;
     background-color: rgb(255, 255, 255);
@@ -27,6 +28,10 @@
     align-items: center;
 }
 
+#category-btn:hover {
+    color: rgb(95, 0, 128);
+}
+
 #category-btn img {
     width: 16px;
     height: 14px;
@@ -51,6 +56,7 @@
     width: 150px;
     height: 55px;
     padding-top: 18px;
+    line-height: 20px;
 }
 
 .nav__link {
@@ -59,6 +65,11 @@
     font-weight: 500;
     color: rgb(51, 51, 51);
     cursor: pointer;
+}
+
+.nav__link:hover {
+    color: rgb(95, 0, 128);
+    border-bottom: 1px solid rgb(95, 0, 128);
 }
 
 #nav__noti {
