@@ -6,7 +6,6 @@
 }
 
 #event-container {
-    background-color: antiquewhite;
     height: 100%;
     width: 100%;
     margin: 0 auto;
@@ -16,7 +15,6 @@
 }
 
 #event-link {
-    background-color: cadetblue;
     display: block;
     height: 100%;
     width: 100%;
