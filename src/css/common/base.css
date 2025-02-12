@@ -1,4 +1,8 @@
 /* base: 공통으로 적용되는 스타일 모음 */
+* {
+    box-sizing: border-box;
+}
+
 body {
     overflow: scroll;
     color: #333;
