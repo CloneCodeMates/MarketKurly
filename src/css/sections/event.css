@@ -1,0 +1,62 @@
+#event {
+    max-width: 1900px;
+    height: 370px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#event-container {
+    background-color: antiquewhite;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#event-link {
+    background-color: cadetblue;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+#event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-button {
+    border: 0;
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    background-image: url(/src/assets/icons/event/event-arrow.svg);
+}
+
+#event-prev-button {
+    transform: rotate(180deg);
+    left: clamp(5%, 8%, 200px);
+}
+
+#event-next-button {
+    right: clamp(5%, 8%, 200px);
+}
+
+#event-index {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 23px;
+    right: clamp(10px, 20%, 400px);
+    bottom: 20px;
+    font-size: 14px;
+    border-radius: 12px;
+    user-select: none;
+}
