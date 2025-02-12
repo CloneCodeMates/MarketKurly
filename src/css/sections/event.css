@@ -34,6 +34,12 @@
     width: 52px;
     height: 52px;
     background-image: url(/src/assets/icons/event/event-arrow.svg);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#event-container:hover .event-button {
+    opacity: 1;
 }
 
 #event-prev-button {
