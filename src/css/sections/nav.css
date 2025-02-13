@@ -38,7 +38,7 @@
     width: 16px;
     height: 14px;
     margin-right: 14px;
-    background-image: url(/src/assets/icons/nav-hamburger.svg);
+    background-image: url(/src/assets/icons/nav/nav-hamburger.svg);
 }
 
 #category-btn span:last-of-type {
@@ -50,7 +50,7 @@
 
 /* 카테고리 버튼 hover */
 #category-btn:hover span:first-of-type {
-    background-image: url(/src/assets/icons/nav-hamburger_hover.svg);
+    background-image: url(/src/assets/icons/nav/nav-hamburger_hover.svg);
 }
 
 #category-btn:hover span:last-of-type {
@@ -63,24 +63,169 @@
     /* 기본적으로 숨김 */
     position: absolute;
     width: 249px;
+    max-height: calc(-55px + 95vh);
+    min-height: 200px;
     border: 1px solid rgb(221, 221, 221);
     background-color: rgb(255, 255, 255);
     overflow: scroll;
 }
 
 /* 카테고리 메뉴 보이게 하기 */
-/*#nav__category:hover #category-menu {
+#nav__category:hover #category-menu {
     display: block;
-}*/
+}
 
+/* 카테고리 아이템 hover */
 .category-item {
     padding: 7px 0px 9px 14px;
+    display: flex;
+}
+
+.category-item a {
+    padding: 1px 20px 0px 10px;
+    color: rgb(51, 51, 51);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
 }
 
 .category-item:hover {
     background-color: rgb(247, 247, 247);
-    color: rgb(95, 0, 128);
     cursor: pointer;
+}
+
+.category-item:hover a {
+    color: rgb(95, 0, 128);
+    font-weight: 500;
+}
+
+/* 카테고리 아이콘 공통 스타일 */
+.category-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('/src/assets/icons/nav/nav-default-sprite.png');
+    background-repeat: no-repeat;
+    background-size: calc(27 * 24px) 24px;
+    /* 전체 스프라이트 크기 */
+}
+
+/* data-pos에 따라 background-position 자동 적용 */
+.category-item[data-pos] .category-icon {
+    background-position: calc(var(--x-pos) * -24px) 0;
+}
+
+/* 각 아이콘의 x 좌표 설정 */
+.category-item[data-pos="0"] {
+    --x-pos: 0;
+}
+
+.category-item[data-pos="1"] {
+    --x-pos: 1;
+}
+
+.category-item[data-pos="2"] {
+    --x-pos: 2;
+}
+
+.category-item[data-pos="3"] {
+    --x-pos: 3;
+}
+
+.category-item[data-pos="4"] {
+    --x-pos: 4;
+}
+
+.category-item[data-pos="5"] {
+    --x-pos: 5;
+}
+
+.category-item[data-pos="6"] {
+    --x-pos: 6;
+}
+
+.category-item[data-pos="7"] {
+    --x-pos: 7;
+}
+
+.category-item[data-pos="8"] {
+    --x-pos: 8;
+}
+
+.category-item[data-pos="9"] {
+    --x-pos: 9;
+}
+
+.category-item[data-pos="10"] {
+    --x-pos: 10;
+}
+
+.category-item[data-pos="11"] {
+    --x-pos: 11;
+}
+
+.category-item[data-pos="12"] {
+    --x-pos: 12;
+}
+
+.category-item[data-pos="13"] {
+    --x-pos: 13;
+}
+
+.category-item[data-pos="14"] {
+    --x-pos: 14;
+}
+
+.category-item[data-pos="15"] {
+    --x-pos: 15;
+}
+
+.category-item[data-pos="16"] {
+    --x-pos: 16;
+}
+
+.category-item[data-pos="17"] {
+    --x-pos: 17;
+}
+
+.category-item[data-pos="18"] {
+    --x-pos: 18;
+}
+
+.category-item[data-pos="19"] {
+    --x-pos: 19;
+}
+
+.category-item[data-pos="20"] {
+    --x-pos: 20;
+}
+
+.category-item[data-pos="21"] {
+    --x-pos: 21;
+}
+
+.category-item[data-pos="22"] {
+    --x-pos: 22;
+}
+
+.category-item[data-pos="23"] {
+    --x-pos: 23;
+}
+
+.category-item[data-pos="24"] {
+    --x-pos: 24;
+}
+
+.category-item[data-pos="25"] {
+    --x-pos: 25;
+}
+
+.category-item[data-pos="26"] {
+    --x-pos: 26;
+}
+
+/* Hover 시 hover 스프라이트로 이미지 변경 */
+.category-item:hover .category-icon {
+    background-image: url('/src/assets/icons/nav/nav-hover-sprite.png');
 }
 
 /* 네비게이션 메뉴 */
