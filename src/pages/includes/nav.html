@@ -11,26 +11,41 @@
 <body>
     <nav id="nav">
         <ul id="nav__list">
+            <!-- 카테고리 -->
             <li id="nav__category">
                 <button id="category-btn">
-                    <img src="/src/assets/icons/nav-hamburger.svg">
+                    <span></span>
                     <span>카테고리</span>
                 </button>
+                <!-- 드롭다운 카테고리 목록 -->
+                <ul id="category-menu">
+                    <li class="category-item"><a href="#">채소</a></li>
+                    <li class="category-item"><a href="#">과일·견과·쌀</a></li>
+                    <li class="category-item"><a href="#">수산·해산·건어물</a></li>
+                    <li class="category-item"><a href="#">정육·계란</a></li>
+                    <li class="category-item"><a href="#">국·반찬·메인요리</a></li>
+                </ul>
             </li>
-            <ul id="nav__items">
-                <li class="nav__item">
-                    <a href="" class="nav__link">신상품</a>
-                </li>
-                <li class="nav__item">
-                    <a href="" class="nav__link">베스트</a>
-                </li>
-                <li class="nav__item">
-                    <a href="" class="nav__link">알뜰쇼핑</a>
-                </li>
-                <li class="nav__item">
-                    <a href="" class="nav__link">특가/혜택</a>
-                </li>
-            </ul>
+
+            <!-- 내비게이션 메뉴 -->
+            <li>
+                <ul id="nav__items">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">신상품</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">베스트</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">알뜰쇼핑</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">특가/혜택</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- 배송 안내 -->
             <li id="nav__noti">
                 <div class="delivery-notice">
                     <span>샛별·하루</span> 배송안내
@@ -39,5 +54,6 @@
         </ul>
     </nav>
 </body>
+
 
 </html>

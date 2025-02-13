@@ -12,9 +12,15 @@
 #nav__list {
     width: 1050px;
     height: 56px;
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+}
+
+/* 카테고리 */
+#nav__category {
+    position: relative;
 }
 
 #nav__category button {
@@ -28,23 +34,56 @@
     align-items: center;
 }
 
-#category-btn:hover {
-    color: rgb(95, 0, 128);
-}
-
-#category-btn img {
+#category-btn span:first-of-type {
     width: 16px;
     height: 14px;
     margin-right: 14px;
+    background-image: url(/src/assets/icons/nav-hamburger.svg);
 }
 
-#category-btn span {
+#category-btn span:last-of-type {
     font-size: 16px;
     font-weight: 500;
     line-height: 20px;
     letter-spacing: -0.3px;
 }
 
+/* 카테고리 버튼 hover */
+#category-btn:hover span:first-of-type {
+    background-image: url(/src/assets/icons/nav-hamburger_hover.svg);
+}
+
+#category-btn:hover span:last-of-type {
+    color: rgb(95, 0, 128);
+}
+
+/* 드롭다운 카테고리 */
+#category-menu {
+    /*display: none;*/
+    /* 기본적으로 숨김 */
+    position: absolute;
+    width: 249px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+    overflow: scroll;
+}
+
+/* 카테고리 메뉴 보이게 하기 */
+/*#nav__category:hover #category-menu {
+    display: block;
+}*/
+
+.category-item {
+    padding: 7px 0px 9px 14px;
+}
+
+.category-item:hover {
+    background-color: rgb(247, 247, 247);
+    color: rgb(95, 0, 128);
+    cursor: pointer;
+}
+
+/* 네비게이션 메뉴 */
 #nav__items {
     display: flex;
     margin-left: 30px;
@@ -72,6 +111,7 @@
     border-bottom: 1px solid rgb(95, 0, 128);
 }
 
+/* 배송 안내 */
 #nav__noti {
     display: flex;
     align-items: center;
