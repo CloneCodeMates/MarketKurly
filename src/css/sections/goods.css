@@ -71,7 +71,7 @@
     width: 249px;
 }
 
-#product-img {
+.product-img {
     width: 249px;
     height: 320px;
     border-radius: 4px;
@@ -80,7 +80,7 @@
     background-position: center;
 }
 
-#cart-btn {
+.cart-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,17 +94,75 @@
     border-radius: 4px;
 }
 
-#cart-btn svg {
+.cart-btn svg {
     width: 22px;
     height: 22px;
     margin: 1px 4px 0px 0px;
 }
 
-#product-info {
-    width: 249px;
-    height: 134px;
+.product-info {
+    position: relative;
     padding: 8px 10px 0px 0px;
-    background-color: rgb(132, 74, 74);
+}
+
+.product-name {
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    letter-spacing: normal;
+    overflow-wrap: break-word
+}
+
+.product-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.dimmed-price {
+    display: block;
+    padding-top: 2px;
+    color: rgb(181, 181, 181);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: line-through;
+}
+
+.discount {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.discount-rate {
+    margin-right: 7px;
+    color: rgb(250, 98, 47);
+}
+
+.review-count {
+    padding-top: 8px;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    color: rgb(167, 178, 188);
+}
+
+.review-icon svg {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+    background-image: url(/src/assets/icons/goods/review-icon.svg);
+}
+
+.review-number {
+    padding-left: 2px;
+    font-weight: 400;
 }
 
 /*버튼 영역*/
