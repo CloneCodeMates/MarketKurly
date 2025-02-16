@@ -2,10 +2,9 @@
     width: 1050px;
     margin: 0px auto;
     padding: 40px 0px;
-    background-color: aliceblue;
-
 }
 
+/*title 영역*/
 #goods-title {
     display: flex;
     flex-direction: column;
@@ -44,6 +43,7 @@
     margin-top: 2px;
 }
 
+/*swiper 영역*/
 #swiper-container {
     height: 496px;
     background-color: rgb(251, 221, 182);
@@ -83,22 +83,29 @@
     background-color: rgb(132, 74, 74);
 }
 
-.goods-btn {
+/*버튼 영역*/
+.swiper-btn {
     position: absolute;
     z-index: 100;
     border: 0px;
     outline: 0px;
     width: 60px;
     height: 60px;
-    background-color: darkblue;
+    top: 160px;
+    background-image: url(/src/assets/icons/goods/swiper-btn.svg);
+    transition: background 0.5s;
 }
 
-#goods-prev-btn {
-    top: 160px;
+#swiper-prev-btn {
     left: 0px;
+    transform: translate(-50%, -50%);
 }
 
-#goods-next-btn {
-    top: 160px;
+#swiper-next-btn {
     right: 0px;
+    transform: translate(50%, -50%) rotate(180deg);
+}
+
+.swiper-btn:hover {
+    background-image: url(/src/assets/icons/goods/swiper-btn-h.svg);
 }
