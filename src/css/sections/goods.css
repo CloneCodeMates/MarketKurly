@@ -7,10 +7,41 @@
 }
 
 #goods-title {
-    height: 73.4px;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 27px;
+}
 
+#goods-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 48px;
+    padding: 8px 0px 8px 8px;
+    cursor: pointer;
+}
+
+#goods-link span {
+    color: rgb(51, 51, 51);
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.26px;
+    font-weight: 500;
+}
+
+#goods-link img {
+    width: 32px;
+    height: 32px;
+}
+
+#goods-subtitle {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.45;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: rgb(153, 153, 153);
+    margin-top: 2px;
 }
 
 #swiper-container {
