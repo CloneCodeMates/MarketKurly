@@ -4,7 +4,6 @@
 }
 
 #time-container {
-    background-color: grey;
     width: 1050px;
     margin: 0 auto;
     padding: 80px 0px;
@@ -13,12 +12,56 @@
 }
 
 #sale-timer {
-    background-color: beige;
     width: 249px;
 }
 
+#sale-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+    line-height: 1.1;
+}
+
+#sale-subtitle {
+    margin: 0;
+    font-size: 16px;
+    color: rgb(153, 153, 153);
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: normal;
+    padding-top: 11px;
+}
+
+#countdown-timer {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 32px;
+}
+
+#timer-icon {
+    width: 36px;
+    height: 47px;
+    margin-right: 5px;
+}
+
+#timer-text {
+    width: 136px;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(51, 51, 51);
+    line-height: 47px;
+}
+
+#sale-message {
+    font-size: 14px;
+    color: rgb(204, 204, 204);
+    font-weight: normal;
+    line-height: 1.43;
+    letter-spacing: -0.4px;
+}
+
 #sale-products {
-    background-color: aliceblue;
     display: flex;
     gap: 18px;
 }
