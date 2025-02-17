@@ -76,12 +76,29 @@
     overflow: hidden;
     border-radius: 4px;
     height: 321px;
+    position: relative;
 }
 
 .sale-product__image {
     width: 100%;
     object-fit: cover;
     display: block;
+}
+
+.sale-product__offer-tag {
+    position: absolute;
+    background-color: rgb(189, 118, 255);
+    top: 8px;
+    left: 8px;
+    border-radius: 4px;
+    padding: 6px 8px;
+}
+
+.sale-product__offer-tag-text {
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
 }
 
 .sale-product__button {
