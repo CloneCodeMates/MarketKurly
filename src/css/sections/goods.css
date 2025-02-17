@@ -9,12 +9,13 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 27px;
+    justify-content: center;
+    align-items: center;
 }
 
 #goods-link {
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 48px;
     padding: 8px 0px 8px 8px;
     cursor: pointer;
@@ -31,6 +32,10 @@
 #goods-link img {
     width: 32px;
     height: 32px;
+    position: absolute;
+    left: 100%;
+    top: 9px;
+    display: flex;
 }
 
 #goods-subtitle {
