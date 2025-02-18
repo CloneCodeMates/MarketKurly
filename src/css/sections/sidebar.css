@@ -1,0 +1,40 @@
+/*sidebar.css*/
+#sidebar {}
+
+#sidebar-container {
+    width: 80px;
+    background-color: rgb(174, 212, 246);
+    height: 503px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*배송 안내 배너*/
+#sidebar-banner {
+    width: 80px;
+    height: 120px;
+    background-color: aquamarine;
+    display: flex;
+}
+
+/*고객 서비스 링크*/
+#sidebar-links {
+    width: 80px;
+    height: 87.67px;
+    background-color: rgb(24, 213, 150);
+}
+
+/*최근 본 상품 목록*/
+#sidebar__recent-products {
+    width: 80px;
+    height: 280px;
+    background-color: rgb(97, 240, 240);
+}
+
+#test1 {
+    height: 7px;
+}
+
+#test2 {
+    height: 8px;
+}
