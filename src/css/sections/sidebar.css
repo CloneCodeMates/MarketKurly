@@ -13,16 +13,18 @@ body {
 }
 
 #sidebar-container {
-    background-color: rgb(174, 212, 246);
     position: sticky;
     top: 50%;
     transform: translateY(-50%);
     width: 80px;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(51, 51, 51);
+    letter-spacing: -0.3px;
 }
 
 /*배송 안내 배너*/
 #sidebar-banner {
-    background-color: aquamarine;
     height: 120px;
     margin-bottom: 7px;
     cursor: pointer;
@@ -38,8 +40,22 @@ body {
 /*고객 서비스 링크*/
 #sidebar-links {
     width: 80px;
-    height: 87.67px;
-    background-color: rgb(24, 213, 150);
+    border-width: 1px 1px 0px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-top-color: rgb(221, 221, 221);
+    border-right-color: rgb(221, 221, 221);
+    border-left-color: rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+}
+
+.sidebar-links__item {
+    height: 29px;
+    padding-top: 5px;
+    text-align: center;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    cursor: pointer;
 }
 
 /*최근 본 상품 목록*/
