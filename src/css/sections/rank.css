@@ -3,7 +3,6 @@
 }
 
 #ranking {
-    background-color: antiquewhite;
     width: 1050px;
     margin: 0px auto;
     padding-top: 40px;
@@ -11,7 +10,6 @@
 }
 
 #ranking-title {
-    background-color: aliceblue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +32,6 @@
 }
 
 #ranking-products {
-    background-color: lavenderblush;
     width: 1050px;
     position: relative;
     margin: 0px auto;
@@ -55,7 +52,6 @@
 }
 
 .ranking-product__image {
-    user-select: none;
     object-fit: cover;
     width: 100%;
     height: 234px;
@@ -98,7 +94,6 @@
 .ranking-product__title span {
     font-size: 14px;
     font-weight: bold;
-    /* line-height: 1.2; */
 }
 
 .ranking-product__button-wrapper {
@@ -123,7 +118,6 @@
 }
 
 #view-all {
-    background-color: darkseagreen;
     display: flex;
     justify-content: center;
     margin: 52px auto 0px;
