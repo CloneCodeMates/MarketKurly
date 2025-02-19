@@ -59,6 +59,9 @@
     object-fit: cover;
     width: 100%;
     height: 234px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: block;
 }
 
 .ranking-product__info {
@@ -95,6 +98,7 @@
 .ranking-product__title span {
     font-size: 14px;
     font-weight: bold;
+    /* line-height: 1.2; */
 }
 
 .ranking-product__button-wrapper {
