@@ -122,6 +122,30 @@
     margin-right: 4px;
 }
 
+.ranking-button {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: url(/src/assets/icons/goods/swiper-btn.svg) no-repeat;
+    border: 0px;
+    bottom: 142px;
+}
+
+.prev-button {
+    padding: 0;
+    transform: translate(-50%, -50%);
+}
+
+.next-button {
+    transform: translate(50%, -50%) rotate(180deg);
+    right: 0;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-image: url(/src/assets/icons/goods/swiper-btn-h.svg);
+}
+
 #view-all {
     display: flex;
     justify-content: center;
