@@ -1,15 +1,11 @@
 /*sidebar.css*/
-body {
-    position: relative;
-}
-
 #sidebar {
     position: absolute;
     top: 516px;
     right: 20px;
     bottom: 0px;
     z-index: 1;
-    /*margin-top: 236px;*/
+    margin-top: 236px;
 }
 
 #sidebar-container {
