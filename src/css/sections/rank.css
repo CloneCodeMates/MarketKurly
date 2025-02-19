@@ -124,5 +124,27 @@
 
 #view-all {
     background-color: darkseagreen;
-    height: 80px;
+    display: flex;
+    justify-content: center;
+    margin: 52px auto 0px;
+}
+
+#view-all a {
+    width: 516px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 3px;
+    font-size: 16px;
+    color: black;
+    letter-spacing: -0.25px;
+}
+
+#view-all a::after {
+    content: '';
+    background: url(/src/assets/icons/rank/view-all-arrow.svg) no-repeat;
+    width: 20px;
+    height: 20px;
 }
