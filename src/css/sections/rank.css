@@ -43,6 +43,7 @@
     margin-right: 25px;
     border-radius: 10px;
     background-color: rgb(247, 247, 247);
+    position: relative;
 }
 
 .ranking-product a {
@@ -78,11 +79,11 @@
 
 .ranking-product__title {
     width: 139px;
+    color: rgb(34, 34, 34);
 }
 
 .ranking-product__title p {
     font-size: 14px;
-    color: rgb(34, 34, 34);
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -94,6 +95,10 @@
 .ranking-product__title span {
     font-size: 14px;
     font-weight: bold;
+}
+
+.ranking-product__discount-rate {
+    color: rgb(250, 98, 47);
 }
 
 .ranking-product__button-wrapper {
