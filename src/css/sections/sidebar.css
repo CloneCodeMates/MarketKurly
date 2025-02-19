@@ -9,7 +9,7 @@ body {
     right: 20px;
     bottom: 0px;
     z-index: 1;
-    margin-top: 236px;
+    /*margin-top: 236px;*/
 }
 
 #sidebar-container {
@@ -60,11 +60,54 @@ body {
 
 /*최근 본 상품 목록*/
 #sidebar__recent-products {
-    width: 80px;
-    height: 280px;
-    background-color: rgb(97, 240, 240);
+    margin-top: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 500;
 }
 
-#test2 {
-    height: 8px;
+.recent-products__btn {
+    width: 100%;
+    border: 0;
+    padding: 0;
+}
+
+.recent-products__btn svg {
+    color: #666;
+}
+
+.recent-products__btn:disabled {
+    cursor: default;
+}
+
+.recent-products__btn:disabled svg {
+    color: #ddd;
+}
+
+#recent-products__list {
+    max-height: 209px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+#recent-products__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recent-products__link {
+    display: block;
+    width: 60px;
+    height: 80px;
+    margin: 2px 0px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.recent-products__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
