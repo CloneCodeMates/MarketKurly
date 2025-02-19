@@ -129,6 +129,7 @@
     background: url(/src/assets/icons/goods/swiper-btn.svg) no-repeat;
     border: 0px;
     bottom: 142px;
+    transition: background 0.5s;
 }
 
 .prev-button {
