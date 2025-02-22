@@ -4,25 +4,25 @@ footer {
     border-top: 1px solid #f7f7f7;
 }
 
-.divider {
+.footer-divider {
     margin: 0 6px;
 }
 
 /* ----- .footer-inner ----- */
-.footer-inner {
+#footer-inner {
     width: 1050px;
     margin: 0 auto;
 }
 
 /* --- .footer-inner-top --- */
-.footer-inner-top {
+#footer-inner-top {
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
 }
 
 /* .customer-center */
-.customer-center__title {
+#customer-center__title {
     margin: 0;
     padding-bottom: 17px;
     font-weight: 500;
@@ -30,14 +30,14 @@ footer {
     line-height: 29px;
 }
 
-.customer-center__contact-tell {
+#customer-center__contact-tell {
     display: block;
     padding-bottom: 20px;
     font-size: 28px;
     line-height: 40px;
 }
 
-.customer-center__contact-info {
+#customer-center__contact-info {
     margin-left: 8px;
     font-weight: normal;
     font-size: 16px;
@@ -67,28 +67,28 @@ footer {
     line-height: 16.8px;
 }
 
-.customer-center__non-member {
+#customer-center__non-member {
     font-size: 12px;
     line-height: 18px;
     color: rgb(153, 153, 153);
 }
 
 /* .about-kurly__info */
-.about-kurly__link {
+#about-kurly__link {
     display: flex;
     width: 100%;
     padding-bottom: 29px;
 }
 
-.about-kurly__link li {
+#about-kurly__link li {
     margin-left: 14px;
 }
 
-.about-kurly__link li:first-child {
+#about-kurly__link li:first-child {
     margin-left: 0px;
 }
 
-.about-kurly__info {
+#about-kurly__info {
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -96,34 +96,34 @@ footer {
     margin-bottom: 40px;
 }
 
-.about-kurly__social-media {
+#about-kurly__social-media {
     display: flex;
 }
 
-.about-kurly__social-media li {
+#about-kurly__social-media li {
     margin-right: 10px;
 }
 
 /* --- .footer-inner-bottom --- */
-.footer-inner-bottom {
+#footer-inner-bottom {
     display: flex;
     justify-content: space-between;
     padding: 26px 0 33px;
     border-top: 1px solid #eee;
 }
 
-.footer-inner-bottom button {
+#footer-inner-bottom button {
     display: flex;
     text-align: left;
     border: 0;
     padding: 0;
 }
 
-.footer-inner-bottom img {
+#footer-inner-bottom img {
     margin-right: 10px;
 }
 
-.footer-inner-bottom p {
+#footer-inner-bottom p {
     font-size: 10px;
     line-height: 14.5px;
     color: rgb(153, 153, 153);
@@ -132,7 +132,7 @@ footer {
 }
 
 /* ----- .footer-bottom ----- */
-.footer-bottom {
+#footer-bottom {
     padding: 20px 0px 30px;
     font-size: 10px;
     line-height: 15px;
@@ -141,7 +141,7 @@ footer {
     color: rgb(153, 153, 153);
 }
 
-.footer-bottom em {
+#footer-bottom em {
     display: block;
     padding-top: 7px;
     font-style: normal;
