@@ -122,10 +122,11 @@
     width: 60px;
     height: 60px;
     position: absolute;
-    background: url(/src/assets/icons/goods/swiper-btn.svg) no-repeat;
+    background: url(/src/assets/icons/swiper-btn.svg) no-repeat;
     border: 0px;
     bottom: 142px;
     transition: background 0.5s;
+    z-index: 100;
 }
 
 .prev-button {
@@ -140,7 +141,7 @@
 
 .prev-button:hover,
 .next-button:hover {
-    background-image: url(/src/assets/icons/goods/swiper-btn-h.svg);
+    background-image: url(/src/assets/icons/swiper-btn-h.svg);
 }
 
 #view-all {
