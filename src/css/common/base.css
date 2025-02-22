@@ -4,7 +4,7 @@
 }
 
 body {
-    overflow: scroll;
+    overflow: auto;
     color: #333;
     font-family: 'Pretendard', 'malgun gothic', AppleGothic, sans-serif;
 }
