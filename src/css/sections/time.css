@@ -81,7 +81,7 @@
     display: block;
 }
 
-.sale-product__offer-tag {
+.product__offer-tag {
     position: absolute;
     background-color: rgb(189, 118, 255);
     top: 8px;
@@ -90,7 +90,7 @@
     padding: 6px 8px;
 }
 
-.sale-product__offer-tag-text {
+.product__offer-tag span {
     color: rgb(255, 255, 255);
     font-size: 14px;
     font-weight: 500;
