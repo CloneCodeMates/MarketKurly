@@ -162,7 +162,7 @@
     width: 15px;
     height: 15px;
     margin-top: 2px;
-    background-image: url(/src/assets/icons/goods/review-icon.svg);
+    background-image: url(/src/assets/icons/review-icon.svg);
 }
 
 .review-number {
@@ -179,7 +179,7 @@
     width: 60px;
     height: 60px;
     top: 160px;
-    background-image: url(/src/assets/icons/goods/swiper-btn.svg);
+    background-image: url(/src/assets/icons/swiper-btn.svg);
     transition: background 0.5s;
 }
 
@@ -194,5 +194,5 @@
 }
 
 .swiper-btn:hover {
-    background-image: url(/src/assets/icons/goods/swiper-btn-h.svg);
+    background-image: url(/src/assets/icons/swiper-btn-h.svg);
 }
