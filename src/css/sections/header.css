@@ -140,7 +140,7 @@
 
 /* 추후 입력이 있을 경우 버튼이 보이게 설정 */
 .header__utility-search__clear-input {
-    /* display: none; */
+    display: none;
     border: 0;
     background: url(/src/assets/icons/header/delete-icon.svg) no-repeat;
     width: 16px;
