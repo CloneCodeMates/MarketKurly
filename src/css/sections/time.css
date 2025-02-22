@@ -12,7 +12,6 @@
 }
 
 #sale-title {
-    margin: 0;
     font-size: 28px;
     font-weight: 500;
     color: rgb(51, 51, 51);
@@ -20,7 +19,6 @@
 }
 
 #sale-subtitle {
-    margin: 0;
     font-size: 16px;
     color: rgb(153, 153, 153);
     font-weight: normal;
