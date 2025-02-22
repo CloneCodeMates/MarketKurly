@@ -9,72 +9,67 @@
 
     <body>
         <!-- 헤더 -->
-        <header class="header">
+        <header id="header">
             <!-- 상단바 -->
-            <ul class="header__topbar-menu">
+            <ul id="header-topbar">
                 <!-- 회원가입 -->
                 <li>
-                    <a href="#" class="header__topbar-menu-signup">회원가입</a>
+                    <a href="#" id="header-topbar__signup">회원가입</a>
                 </li>
-                <div class="header__topbar-menu-divider"></div>
+                <div class="header-topbar__divider"></div>
 
                 <!-- 로그인 -->
                 <li>
-                    <a href="#" class="header__topbar-menu-login">로그인</a>
+                    <a href="#" id="header-topbar__login">로그인</a>
                 </li>
-                <div class="header__topbar-menu-divider"></div>
+                <div class="header-topbar__divider"></div>
 
                 <!-- 고객센터 -->
-                <li class="header__topbar-menu-support">
-                    <a href="#" class="header__topbar-menu-support-link">
+                <li id="header-topbar__support">
+                    <a href="#" class="header-topbar__support-link">
                         고객센터
                         <span class="down-arrow"></span>
                     </a>
-                    <ul class="header__topbar-menu-support-dropdown">
-                        <li class="header__topbar-menu-support-dropdown-item">공지사항</li>
-                        <li class="header__topbar-menu-support-dropdown-item">자주하는 질문</li>
-                        <li class="header__topbar-menu-support-dropdown-item">1:1 문의</li>
-                        <li class="header__topbar-menu-support-dropdown-item">대량주문 문의</li>
+                    <ul id="header-topbar__support-dropdown">
+                        <li class="support-dropdown-item">공지사항</li>
+                        <li class="support-dropdown-item">자주하는 질문</li>
+                        <li class="support-dropdown-item">1:1 문의</li>
+                        <li class="support-dropdown-item">대량주문 문의</li>
                     </ul>
                 </li>
             </ul>
 
             <!-- 헤더 유틸리티 -->
-            <div class="header__utility">
+            <div id="header-utility">
                 <!-- 로고 -->
-                <div class="header__utility-logo">
+                <div id="header-utility__logo">
                     <img src="/src/assets/icons/header/market-kurly-logo.svg" alt="마켓컬리 로고" />
 
                     <!-- 마켓 변경 -->
-                    <div class="header__utility-switch-market">
-                        <a href="#" class="active header__utility-switch-kurly">마켓컬리</a>
-                        <div class="header__utility-market-divider"></div>
-                        <a href="#" class="header__utility-switch-kurly">뷰티컬리</a>
+                    <div id="header-utility__switch-market">
+                        <a href="#" class="active switch-kurly">마켓컬리</a>
+                        <div class="market-divider"></div>
+                        <a href="#" class="switch-kurly">뷰티컬리</a>
                     </div>
                 </div>
 
                 <!-- 검색창 -->
-                <form action="/" method="get" class="header__utility-search">
-                    <input
-                        type="text"
-                        name="search"
-                        class="header__utility-search__input"
-                        placeholder="검색어를 입력해주세요"
-                    />
-                    <button type="button" class="header__utility-search__clear-input"></button>
-                    <button type="submit" class="header__utility-search__button"></button>
+                <form action="/" method="get" id="header-utility__search">
+                    <input type="text" name="search" id="search__input" placeholder="검색어를 입력해주세요" />
+                    <button type="button" id="search__clear-input"></button>
+                    <button type="submit" id="search__button"></button>
                 </form>
 
                 <!-- 사용자 메뉴 -->
-                <ul class="header__utility-user-menu">
+                <ul id="header-utility__user-menu">
                     <li>
-                        <a href="#" class="header__utility-user-menu-delivery"></a>
+                        <a href="#" id="user-menu__delivery"></a>
                     </li>
                     <li>
-                        <a href="#" class="header__utility-user-menu-favorites"></a>
+                        <a href="#" id="user-menu__favorites"></a>
                     </li>
                     <li>
-                        <a href="#" class="header__utility-user-menu-cart"></a>
+                        <a href="#" id="user-menu__cart"></a>
                     </li>
                 </ul>
             </div>

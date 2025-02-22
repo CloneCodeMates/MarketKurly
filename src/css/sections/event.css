@@ -1,7 +1,7 @@
 #event {
     max-width: 1900px;
     height: 370px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     position: relative;
 }
 
