@@ -85,22 +85,6 @@
     background-position: center;
 }
 
-.sticker-coupon {
-    background-color: rgb(189, 118, 255);
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    padding: 6px 8px;
-    border-radius: 4px;
-}
-
-.sticker-coupon p {
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 19px;
-}
-
 .cart-btn {
     display: flex;
     justify-content: center;
