@@ -4,7 +4,8 @@
 }
 
 body {
-    overflow: scroll;
+    position: relative;
+    overflow: auto;
     color: #333;
     font-family: 'Pretendard', 'malgun gothic', AppleGothic, sans-serif;
 }
@@ -28,4 +29,13 @@ p {
 button {
     background-color: transparent;
     cursor: pointer;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
 }
