@@ -46,6 +46,7 @@ footer {
 .customer-center__item {
     display: flex;
     flex-direction: row;
+    font-size: 14px;
 }
 
 .customer-center__item-title {
@@ -82,6 +83,8 @@ footer {
 
 #about-kurly__link li {
     margin-left: 14px;
+    font-size: 14px;
+    line-height: 18px;
 }
 
 #about-kurly__link li:first-child {
