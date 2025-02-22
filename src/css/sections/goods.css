@@ -67,12 +67,12 @@
 .swiper-slide {
     width: 249px;
     margin-right: 18px;
+    cursor: pointer;
 }
 
 .swiper-slide a {
     display: block;
     color: rgb(51, 51, 51);
-    cursor: pointer;
     width: 249px;
 }
 
@@ -83,22 +83,6 @@
     background-image: url(/src/assets/images/product-img1.jpeg);
     background-size: cover;
     background-position: center;
-}
-
-.sticker-coupon {
-    background-color: rgb(189, 118, 255);
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    padding: 6px 8px;
-    border-radius: 4px;
-}
-
-.sticker-coupon p {
-    color: rgb(255, 255, 255);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 19px;
 }
 
 .cart-btn {
@@ -178,7 +162,7 @@
     width: 15px;
     height: 15px;
     margin-top: 2px;
-    background-image: url(/src/assets/icons/goods/review-icon.svg);
+    background-image: url(/src/assets/icons/review-icon.svg);
 }
 
 .review-number {
@@ -195,7 +179,7 @@
     width: 60px;
     height: 60px;
     top: 160px;
-    background-image: url(/src/assets/icons/goods/swiper-btn.svg);
+    background-image: url(/src/assets/icons/swiper-btn.svg);
     transition: background 0.5s;
 }
 
@@ -210,5 +194,5 @@
 }
 
 .swiper-btn:hover {
-    background-image: url(/src/assets/icons/goods/swiper-btn-h.svg);
+    background-image: url(/src/assets/icons/swiper-btn-h.svg);
 }

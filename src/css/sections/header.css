@@ -60,6 +60,7 @@
 
 #header-topbar__support:hover #header-topbar__support-dropdown {
     display: block;
+    z-index: 320;
 }
 
 .support-dropdown-item {
