@@ -104,6 +104,17 @@ footer {
     color: rgb(95, 0, 128);
 }
 
+.info-divider {
+    padding-left: 4px;
+}
+
+.info-divider::after {
+    content: "|";
+    padding-right: 4px;
+    font-size: 10px;
+    vertical-align: top;
+}
+
 #about-kurly__social-media {
     display: flex;
 }
