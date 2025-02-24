@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOMContentLoaded 이벤트 발생!");  // 이벤트 발생 확인용 로그
 
     includeHtml().then(() => {
-        console.log("HTML 파일들이 모두 로드되었습니다!");
 
         // Swiper wrapper 요소 찾기
         const swiperWrapper = document.querySelector(".aside-swiper .swiper-wrapper");
-        console.log("swiperWrapper:", swiperWrapper);  // swiperWrapper가 제대로 선택되는지 확인
 
         if (!swiperWrapper) {
             console.log("swiperWrapper를 찾을 수 없습니다.");
@@ -33,12 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
             slide.classList.add("swiper-slide");
             slide.innerHTML = `<a href="#"><img src="${value.thumb}" alt="최근 본 상품 이미지" class="recent-products__img" /></a>`;
             swiperWrapper.appendChild(slide);
-            console.log("슬라이드 추가됨:", slide);
         });
 
         // Swiper 초기화
         function initializeSwiper() {
-            console.log("Swiper 초기화 시작");
             new Swiper(".aside-swiper", {
                 direction: "vertical", // 세로 슬라이드
                 slidesPerView: "auto", // 한 번에 보이는 슬라이드 개수
@@ -49,10 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     prevEl: ".recent-products__btn:first-of-type",
                 },
             });
-            console.log("Swiper 초기화 완료");
         }
 
-        // Swiper 초기화 실행 (1초 딜레이)
-        setTimeout(initializeSwiper, 1000);
+        // Swiper 초기화 바로 실행
+        initializeSwiper();
     });
 });
