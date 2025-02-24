@@ -99,6 +99,22 @@ footer {
     margin-bottom: 40px;
 }
 
+#about-kurly__info a {
+    margin-left: 3px;
+    color: rgb(95, 0, 128);
+}
+
+.info-divider {
+    padding-left: 4px;
+}
+
+.info-divider::after {
+    content: "|";
+    padding-right: 4px;
+    font-size: 10px;
+    vertical-align: top;
+}
+
 #about-kurly__social-media {
     display: flex;
 }
