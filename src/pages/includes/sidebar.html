@@ -7,6 +7,8 @@
     <title>sidebar</title>
     <link rel="stylesheet" href="/src/css/style.css">
     <script defer src="../../js/include/sidebar.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -33,34 +35,11 @@
                     </svg>
                 </button>
                 최근 본 상품
-                <div id="recent-products__list">
-                    <ul id="recent-products__items">
-                        <li>
-                            <a href="#" class="recent-products__link">
-                                <img src="/src/assets/images/product-img1.jpeg" alt="" class="recent-products__img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="recent-products__link">
-                                <img src="/src/assets/images/product-img1.jpeg" alt="" class="recent-products__img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="recent-products__link">
-                                <img src="/src/assets/images/product-img2.jpeg" alt="" class="recent-products__img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="recent-products__link">
-                                <img src="/src/assets/images/product-img1.jpeg" alt="" class="recent-products__img">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="recent-products__link">
-                                <img src="/src/assets/images/product-img1.jpeg" alt="" class="recent-products__img">
-                            </a>
-                        </li>
-                    </ul>
+                <!-- 최근 본 상품 슬라이드 -->
+                <div class="swiper aside-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- 최근 본 상품이 동적으로 추가될 부분 -->
+                    </div>
                 </div>
                 <button type="button" class="recent-products__btn">
                     <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +47,6 @@
                     </svg>
                 </button>
             </div>
-        </div>
     </aside>
 </body>
 

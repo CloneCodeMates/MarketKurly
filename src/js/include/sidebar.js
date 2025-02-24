@@ -1,53 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        const recentProductsList = document.getElementById("recent-products__items");
-        const upButton = document.querySelector(".recent-products__btn:first-of-type");
-        const downButton = document.querySelector(".recent-products__btn:last-of-type");
 
-        // 버튼과 리스트 요소가 존재하는지 체크
-        if (!recentProductsList || !upButton || !downButton) {
-            console.error('필요한 요소가 존재하지 않습니다.');
+    includeHtml().then(() => {
+
+        // Swiper wrapper 요소 찾기
+        const swiperWrapper = document.querySelector(".aside-swiper .swiper-wrapper");
+
+        if (!swiperWrapper) {
+            console.log("swiperWrapper를 찾을 수 없습니다.");
             return;
         }
 
-        const productItems = recentProductsList.children;
-        const itemHeight = 84; // 각 아이템 높이 (80px + margin 4px)
-        const maxVisibleHeight = 209; // 리스트가 보이는 영역 높이
-        let scrollOffset = 0; // 현재 스크롤된 픽셀 값
+        // 최근 본 상품 데이터 (절대경로)
+        let viewItems = [
+            { id: "product1", thumb: "/src/assets/images/product-img1.jpeg" },
+            { id: "product2", thumb: "/src/assets/images/product-img2.jpeg" },
+            { id: "product3", thumb: "/src/assets/images/product-img3.jpeg" },
+            { id: "product4", thumb: "/src/assets/images/product-img4.jpeg" },
+        ];
 
-        // 전체 리스트 높이
-        const totalHeight = productItems.length * itemHeight;
+        // localStorage에 저장
+        localStorage.setItem("viewitems", JSON.stringify(viewItems));
 
-        // 초기 버튼 상태 설정
-        function updateButtons() {
-            if (totalHeight <= maxVisibleHeight) {
-                upButton.disabled = true;
-                downButton.disabled = true;
-            } else {
-                upButton.disabled = scrollOffset === 0;
-                downButton.disabled = scrollOffset + maxVisibleHeight >= totalHeight;
-            }
+        // localStorage에서 데이터 가져오기
+        const items = JSON.parse(localStorage.getItem("viewitems")) || [];
+
+        // 동적으로 Swiper 슬라이드 추가
+        items.forEach(value => {
+            let slide = document.createElement("div");
+            slide.classList.add("swiper-slide");
+            slide.innerHTML = `<a href="#"><img src="${value.thumb}" alt="최근 본 상품 이미지" class="recent-products__img" /></a>`;
+            swiperWrapper.appendChild(slide);
+        });
+
+        // Swiper 초기화
+        function initializeSwiper() {
+            new Swiper(".aside-swiper", {
+                direction: "vertical", // 세로 슬라이드
+                slidesPerView: "auto", // 한 번에 보이는 슬라이드 개수
+                slidesPerGroup: 1, // 한 번에 이동하는 슬라이드 개수
+                loop: false, // 무한 루프 비활성화
+                navigation: {
+                    nextEl: ".recent-products__btn:last-of-type",
+                    prevEl: ".recent-products__btn:first-of-type",
+                },
+            });
         }
 
-        // 아래 버튼 클릭 (리스트 위로 이동)
-        downButton.addEventListener("click", function () {
-            if (scrollOffset + maxVisibleHeight < totalHeight) {
-                scrollOffset += itemHeight;
-                recentProductsList.style.transform = `translateY(-${scrollOffset}px)`;
-                updateButtons();
-            }
-        });
-
-        // 위 버튼 클릭 (리스트 아래로 이동)
-        upButton.addEventListener("click", function () {
-            if (scrollOffset > 0) {
-                scrollOffset -= itemHeight;
-                recentProductsList.style.transform = `translateY(-${scrollOffset}px)`;
-                updateButtons();
-            }
-        });
-
-        // 초기 버튼 상태 업데이트
-        updateButtons();
-    }, 500); // 500ms 지연
+        // Swiper 초기화 바로 실행
+        initializeSwiper();
+    });
 });
