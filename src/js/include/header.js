@@ -12,3 +12,7 @@ clearButton.addEventListener('click', () => {
     searchInput.value = ''; // 입력 필드의 내용을 지움
     clearButton.style.display = 'none'; // X 버튼을 다시 숨김
 });
+
+const searchButton = document.getElementById('search__button');
+
+searchButton.addEventListener('click', () => {});
