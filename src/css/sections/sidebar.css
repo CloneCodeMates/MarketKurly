@@ -81,32 +81,41 @@
     color: #ddd;
 }
 
-#recent-products__list {
+.aside-swiper {
     max-height: 209px;
+    /* 보이는 영역 */
     overflow: hidden;
     margin-top: 6px;
 }
 
-#recent-products__items {
+#sidebar .swiper-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.recent-products__link {
-    display: block;
+#sidebar .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60px;
     height: 80px;
-    margin: 2px 0px;
-    cursor: pointer;
+    margin: 2px 0;
     overflow: hidden;
 }
 
-.recent-products__img {
+#sidebar .swiper-slide a {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#sidebar .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 
 @media (max-width: 1250px) {
     #sidebar-container {
