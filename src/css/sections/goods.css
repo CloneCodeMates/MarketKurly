@@ -171,10 +171,15 @@
     color: rgb(167, 178, 188);
 }
 
-.review-icon svg {
+.review-icon {
     width: 15px;
     height: 15px;
     margin-top: 2px;
+}
+
+.review-icon svg {
+    width: 15px;
+    height: 15px;
     background-image: url(/src/assets/icons/review-icon.svg);
 }
 
