@@ -1,6 +1,12 @@
-const goodsSwiperContainer = document.querySelector("#goods-swiper .swiper-container");
-if (goodsSwiperContainer) {
-    console.log("Goods Swiper 초기화 중...");
+includeHtml().then(() => {
+    // Swiper wrapper 요소 찾기
+    const goodsSwiperContainer = document.querySelector("#goods-swiper .swiper-container");
+
+    if (!goodsSwiperContainer) {
+        console.log("goods Swiper 를 찾을 수 없습니다.");
+        return;
+    }
+
     // Swiper 초기화
     new Swiper(goodsSwiperContainer, {
         slidesPerView: 'auto', // 한 번에 보이는 슬라이드 개수
@@ -12,6 +18,9 @@ if (goodsSwiperContainer) {
             prevEl: "#swiper-prev-btn",
         },
     });
-} else {
-    console.log("Goods Swiper 를 찾을 수 없습니다.");
-}
+
+    console.log("Goods Swiper 초기화 완료");
+}).catch(error => {
+    console.log("HTML 포함 중 오류 발생:", error);
+});
+
