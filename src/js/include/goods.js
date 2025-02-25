@@ -18,9 +18,4 @@ includeHtml().then(() => {
             prevEl: "#swiper-prev-btn",
         },
     });
-
-    console.log("Goods Swiper 초기화 완료");
-}).catch(error => {
-    console.log("HTML 포함 중 오류 발생:", error);
 });
-
