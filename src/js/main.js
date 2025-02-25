@@ -2,3 +2,4 @@
 
 import '../../src/js/include/sidebar.js';
 import './include/header.js';
+import './include/top-banner.js';
