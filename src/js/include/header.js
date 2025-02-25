@@ -14,5 +14,28 @@ clearButton.addEventListener('click', () => {
 });
 
 const searchButton = document.getElementById('search__button');
+const modalBackground = document.getElementById('modal-background');
+const searchModal = document.getElementById('search-modal');
 
-searchButton.addEventListener('click', () => {});
+// 검색 버튼 클릭 시
+searchButton.addEventListener('click', (event) => {
+    // 검색어 비어있는지 확인
+    if (searchInput.value.trim() === '') {
+        // 검색어가 없으면 폼 제출 동작 막기
+        event.preventDefault();
+        // 모달 배경과 모달 창 표시
+        modalBackground.style.display = 'block';
+        searchModal.style.display = 'block';
+    } else {
+        // 검색어가 있으면 일반 검색 동작
+        console.log('검색어:', searchInput.value);
+    }
+});
+
+const confirmButton = document.getElementById('confirm-button');
+
+// 모달 창의 확인 버튼 클릭 시
+confirmButton.addEventListener('click', () => {
+    modalBackground.style.display = 'none';
+    searchModal.style.display = 'none';
+});
