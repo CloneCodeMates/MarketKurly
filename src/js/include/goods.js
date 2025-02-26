@@ -12,6 +12,11 @@ includeHtml().then(() => {
         slidesPerView: 'auto', // 한 번에 보이는 슬라이드 개수
         slidesPerGroup: 4, // 버튼 클릭 시 이동하는 슬라이드 개수
         spaceBetween: 18,
+
+        // 마우스 드래그 관련 옵션
+        simulateTouch: true, // 마우스로 드래그 가능
+        grabCursor: true, // 마우스 커서를 손 모양으로 변경
+
         loop: false, // 무한 루프 비활성화
         navigation: {
             nextEl: "#swiper-next-btn",
