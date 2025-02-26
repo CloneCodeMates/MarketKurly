@@ -246,11 +246,12 @@
     background-image: url(/src/assets/icons/header/cart-icon-h.svg);
 }
 
-#header-utility__user-menu li {
+#user-menu__wrap {
     position: relative;
 }
 
 #delivery__container {
+    display: none;
     position: absolute;
     z-index: 400;
     background-color: white;
@@ -271,6 +272,10 @@
     height: 11px;
     top: -11px;
     left: 133px;
+}
+
+#user-menu__wrap:hover #delivery__container {
+    display: block;
 }
 
 #delivery__content {
