@@ -27,6 +27,8 @@ includeHtml().then(() => {
             // 모달 배경과 모달 창 표시
             modalBackground.style.display = 'block';
             searchModal.style.display = 'block';
+
+            openModal();
         } else {
             // 검색어가 있으면 일반 검색 동작
             console.log('검색어:', searchInput.value);
