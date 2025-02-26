@@ -31,9 +31,39 @@ includeHtml().then(() => {
     const quantityCount = cartModal.querySelector(".quantity-count");
     const decreaseBtn = cartModal.querySelector(".quantity-btn__decrease");
     const increaseBtn = cartModal.querySelector(".quantity-btn__increase");
-    const cancelBtn = cartModal.querySelector(".modal__btn:first-of-type")
+    const cancelBtn = cartModal.querySelector(".modal__btn:first-of-type");
 
     let currentQuantity = 1;
+
+    // 모달 열기 함수
+    const openModal = () => {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.classList.add("modal-open");
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+        // 사이드바가 다른 섹션에서 불러와졌다면 해당 섹션을 찾아서 padding-right 적용
+        const sidebar = document.getElementById("sidebar"); // 사이드바 요소 찾기
+
+        if (sidebar) {
+            sidebar.style.paddingRight = `${scrollbarWidth}px`;
+        }
+    };
+
+    // 모달 닫기 함수
+    const closeModal = () => {
+        document.body.classList.remove("modal-open");
+        document.body.style.paddingRight = "";
+
+        // 모달을 닫을 때 사이드바의 padding-right도 원래대로 복구
+        const sidebar = document.getElementById("sidebar");
+
+        if (sidebar) {
+            sidebar.style.paddingRight = "";
+        }
+
+        modalBackground.style.display = "none";
+        cartModal.style.display = "none";
+    };
 
     // 모든 'cart-btn' 클릭 시 이벤트 처리
     document.querySelectorAll(".cart-btn").forEach(cartBtn => {
@@ -59,8 +89,8 @@ includeHtml().then(() => {
             modalBackground.style.display = "block";
             cartModal.style.display = "block";
 
-            // 배경 스크롤 방지
-            document.body.style.overflow = "hidden";
+            // 모달 열기 함수 호출 (스크롤 방지)
+            openModal();
         });
     });
 
@@ -90,17 +120,9 @@ includeHtml().then(() => {
 
     // 수량이 1일 때는 decrease 버튼 비활성화
     function checkDecreaseButton() {
-        if (currentQuantity === 1) {
-            decreaseBtn.disabled = true;
-        } else {
-            decreaseBtn.disabled = false;
-        }
+        decreaseBtn.disabled = currentQuantity === 1;
     }
 
     // 취소 버튼 클릭 시 모달 창 닫기
-    cancelBtn.addEventListener('click', () => {
-        modalBackground.style.display = 'none';
-        cartModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
+    cancelBtn.addEventListener('click', closeModal);
 });

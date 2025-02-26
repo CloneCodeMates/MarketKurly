@@ -17,6 +17,11 @@
     /*텍스트 드래그 방지*/
 }
 
+/* 모달이 열릴 때 body의 스크롤을 막음 */
+body.modal-open {
+    overflow: hidden;
+}
+
 .modal__product {
     display: flex;
     padding: 5px 0px 12px;
