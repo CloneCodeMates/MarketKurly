@@ -3,6 +3,11 @@
     background-color: rgb(95, 0, 128);
     height: 42px;
     text-align: center;
+    transition: margin-top 0.4s linear;
+}
+
+#top-banner.hide {
+    margin-top: -42px;
 }
 
 #top-banner__container {
