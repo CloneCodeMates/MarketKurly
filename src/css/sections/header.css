@@ -246,6 +246,10 @@
     background-image: url(/src/assets/icons/header/cart-icon-h.svg);
 }
 
+#header-utility__user-menu li {
+    position: relative;
+}
+
 #delivery__container {
     position: absolute;
     z-index: 400;
@@ -253,7 +257,20 @@
     border: 1px solid rgb(221, 221, 221);
     padding: 18px 17px 17px;
     width: 267px;
-    right: 55px;
+    top: 123%;
+    left: 16%;
+    transform: translateX(-50%);
+}
+
+#delivery__container::before {
+    content: '';
+    background-image: url(/src/assets/icons/header/dropdown-tail.svg);
+    position: absolute;
+    z-index: 400;
+    width: 18px;
+    height: 11px;
+    top: -11px;
+    left: 133px;
 }
 
 #delivery__content {
