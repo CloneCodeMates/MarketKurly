@@ -245,3 +245,70 @@
 #user-menu__cart:hover {
     background-image: url(/src/assets/icons/header/cart-icon-h.svg);
 }
+
+#delivery__container {
+    position: absolute;
+    z-index: 400;
+    background-color: white;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 18px 17px 17px;
+    width: 267px;
+    right: 55px;
+}
+
+#delivery__content {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    line-height: 24px;
+    letter-spacing: 0.32px;
+    padding-bottom: 11px;
+}
+
+#delivery__content strong {
+    font-weight: 400;
+    color: rgb(95, 0, 128);
+}
+
+#delivery__content span {
+    margin-left: -4px;
+}
+
+#delivery__button-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+#login-button {
+    width: 80px;
+    height: 36px;
+    border-radius: 3px;
+    color: rgb(95, 0, 128);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(95, 0, 128);
+    font-weight: 500;
+}
+
+#address-search-button {
+    height: 36px;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(95, 0, 128);
+    width: 145px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#address-search-button img {
+    width: 20px;
+    height: 20px;
+}
+
+#address-search-button span {
+    margin-top: 3px;
+    font-weight: 500;
+    margin-right: 10px;
+}
