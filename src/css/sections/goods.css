@@ -188,6 +188,44 @@
     font-weight: 400;
 }
 
+/*전체 보기 영역*/
+.slide__view-all {
+    display: flex;
+    height: 320px;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-all__link {
+    display: block;
+    border: 1px solid transparent;
+    padding-top: 4px;
+    background: transparent;
+    outline: 0px;
+    user-select: none;
+}
+
+.view-all__icon {
+    display: block;
+    margin-bottom: 18px;
+    width: 64px;
+    height: 64px;
+    background: url(/src/assets/icons/view-all_icon.svg) 50% center / contain no-repeat;
+}
+
+.view-all__icon:hover {
+    background: url(/src/assets/icons/view-all_icon-h.svg);
+}
+
+.view-all__text {
+    display: block;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+    font-weight: normal;
+    text-align: center;
+}
+
+
 /*버튼 영역*/
 .swiper-btn {
     position: absolute;
