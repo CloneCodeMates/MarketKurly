@@ -5,9 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Header</title>
         <link rel="stylesheet" href="/src/css/style.css" />
+        <script src="../../js/include/header.js" defer></script>
     </head>
 
     <body>
+        <div id="modal-background"></div>
+        <!-- 모달창 -->
+        <div id="search-modal">
+            <div id="modal-content">검색어를 입력해주세요.</div>
+            <div id="modal-footer">
+                <button id="confirm-button">확인</button>
+            </div>
+        </div>
         <!-- 헤더 -->
         <header id="header">
             <!-- 상단바 -->
@@ -49,14 +58,14 @@
                     <div id="header-utility__switch-market">
                         <a href="#" class="active switch-kurly">마켓컬리</a>
                         <div class="market-divider"></div>
-                        <a href="#" class="switch-kurly">뷰티컬리</a>
+                        <a href="/beauty" class="switch-kurly">뷰티컬리</a>
                     </div>
                 </div>
 
                 <!-- 검색창 -->
                 <form action="/" method="get" id="header-utility__search">
                     <input type="text" name="search" id="search__input" placeholder="검색어를 입력해주세요" />
-                    <button type="button" id="search__clear-input"></button>
+                    <button type="button" id="search__clear-button"></button>
                     <button type="submit" id="search__button"></button>
                 </form>
 
