@@ -73,7 +73,7 @@
     width: 249px;
 }
 
-#goods .swiper-slide a {
+#goods .product-wrapper {
     display: block;
     color: rgb(51, 51, 51);
     width: 249px;
