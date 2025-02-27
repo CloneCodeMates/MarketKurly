@@ -37,7 +37,6 @@
     transition: 0.5s;
     z-index: 100;
     top: 43%;
-    transform: translateY(-10%);
 }
 
 .swiper:hover .event-button {
@@ -62,9 +61,10 @@
     justify-content: center;
     width: 55px;
     height: 23px;
-    right: clamp(10px, 20%, 400px);
+    left: 75%;
     bottom: 20px;
     font-size: 14px;
     border-radius: 12px;
     user-select: none;
+    z-index: 100;
 }
