@@ -35,19 +35,22 @@
     background-image: url(/src/assets/icons/event/event-arrow.svg);
     opacity: 0;
     transition: 0.5s;
+    z-index: 100;
+    top: 43%;
+    transform: translateY(-10%);
 }
 
-#event-container:hover .event-button {
+.swiper:hover .event-button {
     opacity: 1;
 }
 
 #event-prev-button {
+    left: 8%;
     transform: rotate(180deg);
-    left: clamp(5%, 8%, 200px);
 }
 
 #event-next-button {
-    right: clamp(5%, 8%, 200px);
+    right: 8%;
 }
 
 #event-page-index {
