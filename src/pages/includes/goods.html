@@ -6,9 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>goods</title>
     <link rel="stylesheet" href="/src/css/style.css">
+    <script defer src="/src/js/include/goods.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </head>
 
 <body>
+    <div id="modal-background"></div>
+    <!-- 모달창 -->
+    <div class="cart-modal" role="dialog">
+        <!-- 제품 -->
+        <div class="modal__product">
+            <!-- 제품 이미지 -->
+            <div class="modal__img-wrapper">
+                <img class="modal__img">
+            </div>
+            <!-- 제품 제목 -->
+            <div class="modal__title-wrapper">
+                <span class="modal__title"></span>
+            </div>
+        </div>
+
+        <!-- 가격 및 수량 선택 -->
+        <div class="modal__details">
+            <div class="modal__info">
+                <div class="modal__subtitle-wrapper">
+                    <span class="modal__subtitle"></span>
+                </div>
+
+                <div class="modal__product-pricing">
+                    <div class="price-container">
+                        <span class="price-discounted"></span>
+                        <span class="price-original"></span>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <button type="button" aria-label="수량내리기" class="quantity-btn quantity-btn__decrease"
+                            disabled></button>
+                        <div class="quantity-count">1</div>
+                        <button type="button" aria-label="수량올리기" class="quantity-btn quantity-btn__increase"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 합계 -->
+        <div class="modal__total">
+            <div class="total-container">
+                <div class="total">
+                    <p class="total__label">합계</p>
+                    <div class="total__amount">
+                        <span class="total__price">0</span><span class="total__currency">원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 버튼 -->
+        <div class="modal__actions-btn">
+            <button class="modal__btn btn__cancel"><span>취소</span></button>
+            <button class="modal__btn btn__add-to-cart"><span>장바구니 담기</span></button>
+        </div>
+
+    </div>
+
     <section id="goods">
         <div id="goods-title">
             <a href="#" id="goods-link">
@@ -17,89 +78,219 @@
             </a>
             <p id="goods-subtitle">컬리 추천 특가템 최대 50%</p>
         </div>
-        <div id="swiper-container">
-            <div id="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="product-img">
-                        <div class="product__offer-tag">
-                            <span>+10%쿠폰</span>
-                        </div>
-                    </div>
-                    <button class="cart-btn">
-                        <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
-                        담기</button>
-                    <div class="product-info">
-                        <h3 class="product-name">[하겐다즈] 파인트 클래식 아이스크림 7종 (택1)</h3>
-                        <div class="product-price">
-                            <span class="dimmed-price">15,500원</span>
-                            <div class="discount">
-                                <span class="discount-rate">39%</span>
-                                <span class="sales-price">9,400원~</span>
+        <div id="goods-swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img1.jpeg" alt="제품1">
+                                <div class="product__offer-tag">
+                                    <span>+10%쿠폰</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="review-count">
-                            <div class="review-icon"><svg></svg></div>
-                            <span class="review-number">9,999+</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product-img"></div>
-                    <button class="cart-btn">
-                        <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
-                        담기</button>
-                    <div class="product-info">
-                        <h3 class="product-name">[하겐다즈] 파인트 클래식 아이스크림 7종 (택1)</h3>
-                        <div class="product-price">
-                            <span class="dimmed-price">15,500원</span>
-                            <div class="discount">
-                                <span class="discount-rate">39%</span>
-                                <span class="sales-price">9,400원~</span>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[하겐다즈] 파인트 클래식 아이스크림 7종 (택1)</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">15,500원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">39%</span>
+                                        <span class="sales-price">9,400원~</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">9,999+</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="review-count">
-                            <div class="review-icon"><svg></svg></div>
-                            <span class="review-number">9,999+</span>
-                        </div>
+                        </a>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product-img"></div>
-                    <button class="cart-btn">
-                        <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
-                        담기</button>
-                    <div class="product-info">
-                        <h3 class="product-name">[하겐다즈] 파인트 클래식 아이스크림 7종 (택1)</h3>
-                        <div class="product-price">
-                            <span class="dimmed-price">15,500원</span>
-                            <div class="discount">
-                                <span class="discount-rate">39%</span>
-                                <span class="sales-price">9,400원~</span>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img2.jpeg" alt="제품2">
                             </div>
-                        </div>
-                        <div class="review-count">
-                            <div class="review-icon"><svg></svg></div>
-                            <span class="review-number">9,999+</span>
-                        </div>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[기획상품] 칠레산 블루베리 125g*3팩</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">19,900원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">40%</span>
+                                        <span class="sales-price">9,990원</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">9,999+</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="product-img"></div>
-                    <button class="cart-btn">
-                        <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
-                        담기</button>
-                    <div class="product-info">
-                        <h3 class="product-name">[하겐다즈] 파인트 클래식 아이스크림 7종 (택1)</h3>
-                        <div class="product-price">
-                            <span class="dimmed-price">15,500원</span>
-                            <div class="discount">
-                                <span class="discount-rate">39%</span>
-                                <span class="sales-price">9,400원~</span>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img3.jpeg" alt="제품3">
+                                <div class="product__offer-tag">
+                                    <span>+10%쿠폰</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="review-count">
-                            <div class="review-icon"><svg></svg></div>
-                            <span class="review-number">9,999+</span>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[KF365] 1+ 한우 국거리 300g(냉장)</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">15,900원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">25%</span>
+                                        <span class="sales-price">11,920원</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">9,999+</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img4.jpeg" alt="제품4">
+                            </div>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[아이엠베이글] 시그니처 베이글 샌드위치 2종</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">7,800원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">15%</span>
+                                        <span class="sales-price">6,630원~</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">999+</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img1.jpeg" alt="제품1">
+                                <div class="product__offer-tag">
+                                    <span>+10%쿠폰</span>
+                                </div>
+                            </div>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[하겐다즈] 파인트 클래식 아이스크림 7종 (택1)</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">15,500원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">39%</span>
+                                        <span class="sales-price">9,400원~</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">9,999+</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img2.jpeg" alt="제품2">
+                            </div>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[기획상품] 칠레산 블루베리 125g*3팩</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">19,900원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">40%</span>
+                                        <span class="sales-price">9,990원</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">9,999+</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img3.jpeg" alt="제품3">
+                                <div class="product__offer-tag">
+                                    <span>+10%쿠폰</span>
+                                </div>
+                            </div>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[KF365] 1+ 한우 국거리 300g(냉장)</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">15,900원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">25%</span>
+                                        <span class="sales-price">11,920원</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">9,999+</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="product-wrapper">
+                            <div class="product-img">
+                                <img src="/src/assets/images/product-img4.jpeg" alt="제품4">
+                            </div>
+                            <button class="cart-btn" onclick="event.preventDefault();">
+                                <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼">
+                                담기</button>
+                            <div class="product-info">
+                                <h3 class="product-name">[아이엠베이글] 시그니처 베이글 샌드위치 2종</h3>
+                                <div class="product-price">
+                                    <span class="dimmed-price">7,800원</span>
+                                    <div class="discount">
+                                        <span class="discount-rate">15%</span>
+                                        <span class="sales-price">6,630원~</span>
+                                    </div>
+                                </div>
+                                <div class="review-count">
+                                    <div class="review-icon"><svg></svg></div>
+                                    <span class="review-number">999+</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide__view-all">
+                            <a href="#" class="view-all__link">
+                                <span class="view-all__icon"></span>
+                                <span class="view-all__text">전체보기</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -107,6 +298,7 @@
             <button class="swiper-btn" id="swiper-prev-btn"></button>
             <button class="swiper-btn" id="swiper-next-btn"></button>
         </div>
+
     </section>
 
 </body>
