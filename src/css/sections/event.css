@@ -5,6 +5,10 @@
     position: relative;
 }
 
+.swiper {
+    height: 100%;
+}
+
 #event-container {
     height: 100%;
     width: 100%;
@@ -13,11 +17,11 @@
     position: relative;
 }
 
-#event-link {
+.event-link {
     height: 100%;
 }
 
-#event-image {
+.event-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -46,7 +50,7 @@
     right: clamp(5%, 8%, 200px);
 }
 
-#event-index {
+#event-page-index {
     position: absolute;
     color: rgb(255, 255, 255);
     background: rgba(0, 0, 0, 0.15);
