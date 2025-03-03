@@ -9,6 +9,72 @@
     </head>
 
     <body>
+        <div id="modal-background"></div>
+        <!-- 모달창 -->
+        <div class="cart-modal" role="dialog">
+            <!-- 제품 -->
+            <div class="modal__product">
+                <!-- 제품 이미지 -->
+                <div class="modal__img-wrapper">
+                    <img class="modal__img" />
+                </div>
+                <!-- 제품 제목 -->
+                <div class="modal__title-wrapper">
+                    <span class="modal__title"></span>
+                </div>
+            </div>
+
+            <!-- 가격 및 수량 선택 -->
+            <div class="modal__details">
+                <div class="modal__info">
+                    <div class="modal__subtitle-wrapper">
+                        <span class="modal__subtitle"></span>
+                    </div>
+
+                    <div class="modal__product-pricing">
+                        <div class="price-container">
+                            <span class="price-discounted"></span>
+                            <span class="price-original"></span>
+                        </div>
+
+                        <div class="quantity-selector">
+                            <button
+                                type="button"
+                                aria-label="수량내리기"
+                                class="quantity-btn quantity-btn__decrease"
+                                disabled
+                            ></button>
+                            <div class="quantity-count">1</div>
+                            <button
+                                type="button"
+                                aria-label="수량올리기"
+                                class="quantity-btn quantity-btn__increase"
+                            ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 합계 -->
+            <div class="modal__total">
+                <div class="total-container">
+                    <div class="total">
+                        <p class="total__label">합계</p>
+                        <div class="total__amount">
+                            <span class="total__price">0</span>
+                            <span class="total__currency">원</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 버튼 -->
+            <div class="modal__actions-btn">
+                <button class="modal__btn btn__cancel"><span>취소</span></button>
+                <button class="modal__btn btn__add-to-cart"><span>장바구니 담기</span></button>
+            </div>
+        </div>
+
         <section id="time-container">
             <section id="sale-timer">
                 <h2 id="sale-title">✨주말특가</h2>
