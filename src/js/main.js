@@ -5,3 +5,4 @@ import '/src/js/include/sidebar.js';
 import './include/header.js';
 import './include/top-banner.js';
 import './include/event.js';
+import './include/time.js';

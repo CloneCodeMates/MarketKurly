@@ -79,6 +79,11 @@
     display: block;
 }
 
+.sale-product__image:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
 .product__offer-tag {
     position: absolute;
     background-color: rgb(189, 118, 255);
