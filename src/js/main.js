@@ -6,3 +6,4 @@ import './include/header.js';
 import './include/top-banner.js';
 import './include/event.js';
 import './include/modal.js';
+import './include/rank.js';
