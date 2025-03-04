@@ -35,7 +35,7 @@
                     if (filePath) {
                         try {
                             const response = await fetch(filePath);
-                            if (!response.ok) throw new Error('include not found.');
+                            if (!response.ok) throw new Error(`Failed to load: ${filePath}`);
                             el.innerHTML = await response.text();
                         } catch (error) {
                             el.innerHTML = error.message;
