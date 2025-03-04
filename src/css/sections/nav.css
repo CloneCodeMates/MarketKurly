@@ -8,6 +8,17 @@
     z-index: 300;
 }
 
+/* 네비게이션 상단 고정 스타일 */
+#nav.fixed {
+    position: fixed;
+    /* fixed로 변경 시 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 301;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+}
+
 #nav__list {
     width: 1050px;
     height: 56px;
