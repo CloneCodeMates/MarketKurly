@@ -16,14 +16,20 @@
     width: 100%;
     z-index: 301;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+    display: flex;
 }
 
 #nav.fixed #nav__category {
     flex: 0 0 120px;
 }
 
-#nav.fixed #nav__items {
-    flex: 0 0 0%;
+#nav.fixed #nav__list {
+    justify-content: flex-start;
+}
+
+#nav.fixed #nav__items>* {
+    width: 120px;
+    /* fixed 상태에서 각 항목의 너비를 120px로 줄임 */
 }
 
 #nav.fixed #nav__noti {
@@ -79,17 +85,44 @@
 #nav.fixed #search__button {
     position: relative;
     margin: 0;
-    margin-top: 3px;
     height: 30px;
     top: 0px;
     width: 40px;
     background: url(/src/assets/icons/nav/search-icon_fixed.svg) no-repeat;
 }
 
+#nav.fixed #header-utility__search {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    z-index: 302;
+    right: auto;
+    top: 10px;
+    left: 1050px;
+    margin-left: -142px;
+}
+
+#nav.fixed #header-utility__user-menu {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    z-index: 302;
+    right: auto;
+    top: 10px;
+    height: 36px;
+}
+
 @media (min-width: 1050px) {
     #nav.fixed #header-utility__search {
         left: 50%;
         margin-left: 120px;
+    }
+
+    #nav.fixed #header-utility__user-menu {
+        left: 50%;
+        margin-left: 383px;
     }
 }
 
