@@ -40,12 +40,17 @@
     border-radius: 10px;
     background-color: rgb(247, 247, 247);
     position: relative;
+    overflow: hidden;
 }
 
 .ranking-product a {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+.ranking-product__image-wrapper {
+    overflow: hidden;
 }
 
 .ranking-product__image {
