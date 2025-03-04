@@ -44,6 +44,12 @@ includeHtml().then(() => {
 
         modalBackground.style.display = "none";
         cartModal.style.display = "none";
+
+        // 모달 데이터 초기화
+        currentQuantity = 1;
+        quantityCount.textContent = currentQuantity;
+        updateTotalPrice();
+        checkDecreaseButton();
     };
 
     // 모든 'cart-btn' 클릭 시 이벤트 처리
