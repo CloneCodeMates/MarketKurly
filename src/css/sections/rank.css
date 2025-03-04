@@ -57,6 +57,11 @@
     display: block;
 }
 
+.ranking-product__image:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+}
+
 .ranking-product__info {
     display: flex;
     gap: 12px;
