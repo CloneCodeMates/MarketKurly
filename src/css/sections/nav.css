@@ -35,6 +35,64 @@
     display: flex;
 }
 
+#nav.fixed #header-utility__search {
+    padding-top: 0;
+    margin-top: 0;
+    box-shadow: rgb(247, 247, 247) 0px 0px 0px 1px inset;
+    position: fixed;
+    z-index: 302;
+    top: 10px;
+    width: 242px;
+    height: 36px;
+    border: none;
+    background-color: rgb(247, 247, 247);
+    left: 1050px;
+    margin-left: -405px;
+}
+
+#nav.fixed #search__input {
+    width: 193px;
+    padding-right: 22px;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+    background-color: rgb(247, 247, 247);
+    line-height: 18px;
+}
+
+/* :focus-within을 사용하여 input이 focus 상태일 때 부모의 스타일을 변경 */
+#nav.fixed #header-utility__search:focus-within {
+    background-color: rgb(255, 255, 255);
+}
+
+#nav.fixed #search__input:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+#nav.fixed #search__clear-button {
+    margin-left: -10px;
+    margin-top: 18px;
+    background-size: 12px 12px;
+    margin-top: 11px;
+}
+
+#nav.fixed #search__button {
+    position: relative;
+    margin: 0;
+    margin-top: 3px;
+    height: 30px;
+    top: 0px;
+    width: 40px;
+    background: url(/src/assets/icons/nav/search-icon_fixed.svg) no-repeat;
+}
+
+@media (min-width: 1050px) {
+    #nav.fixed #header-utility__search {
+        left: 50%;
+        margin-left: 120px;
+    }
+}
+
 #nav__list {
     width: 1050px;
     height: 56px;
