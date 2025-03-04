@@ -11,12 +11,28 @@
 /* 네비게이션 상단 고정 스타일 */
 #nav.fixed {
     position: fixed;
-    /* fixed로 변경 시 */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 301;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+}
+
+#nav.fixed #nav__category {
+    flex: 0 0 120px;
+}
+
+#nav.fixed #nav__items {
+    flex: 0 0 0%;
+}
+
+#nav.fixed #nav__noti {
+    display: none;
+}
+
+/* 고정되었을 때만 표시 */
+#nav.fixed #nav-extra {
+    display: flex;
 }
 
 #nav__list {
