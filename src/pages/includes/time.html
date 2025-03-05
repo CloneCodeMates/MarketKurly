@@ -8,72 +8,6 @@
     </head>
 
     <body>
-        <div id="modal-background"></div>
-        <!-- 모달창 -->
-        <div class="cart-modal" role="dialog">
-            <!-- 제품 -->
-            <div class="modal__product">
-                <!-- 제품 이미지 -->
-                <div class="modal__img-wrapper">
-                    <img class="modal__img" />
-                </div>
-                <!-- 제품 제목 -->
-                <div class="modal__title-wrapper">
-                    <span class="modal__title"></span>
-                </div>
-            </div>
-
-            <!-- 가격 및 수량 선택 -->
-            <div class="modal__details">
-                <div class="modal__info">
-                    <div class="modal__subtitle-wrapper">
-                        <span class="modal__subtitle"></span>
-                    </div>
-
-                    <div class="modal__product-pricing">
-                        <div class="price-container">
-                            <span class="price-discounted"></span>
-                            <span class="price-original"></span>
-                        </div>
-
-                        <div class="quantity-selector">
-                            <button
-                                type="button"
-                                aria-label="수량내리기"
-                                class="quantity-btn quantity-btn__decrease"
-                                disabled
-                            ></button>
-                            <div class="quantity-count">1</div>
-                            <button
-                                type="button"
-                                aria-label="수량올리기"
-                                class="quantity-btn quantity-btn__increase"
-                            ></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 합계 -->
-            <div class="modal__total">
-                <div class="total-container">
-                    <div class="total">
-                        <p class="total__label">합계</p>
-                        <div class="total__amount">
-                            <span class="total__price">0</span>
-                            <span class="total__currency">원</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 버튼 -->
-            <div class="modal__actions-btn">
-                <button class="modal__btn btn__cancel"><span>취소</span></button>
-                <button class="modal__btn btn__add-to-cart"><span>장바구니 담기</span></button>
-            </div>
-        </div>
-
         <section id="time-container">
             <section id="sale-timer">
                 <h2 id="sale-title">✨주말특가</h2>
@@ -85,8 +19,8 @@
                 <p id="sale-message">망설이면 늦어요!</p>
             </section>
             <section id="sale-products">
-                <a href="#" class="sale-product">
-                    <div class="sale-product__image-wrapper">
+                <a href="#" class="sale-product product-wrapper">
+                    <div class="sale-product__image-wrapper product-img">
                         <img
                             class="sale-product__image"
                             src="/src/assets/images/sale-product1.jpg"
@@ -96,7 +30,7 @@
                             <span>주말특가</span>
                         </div>
                     </div>
-                    <button class="sale-product__button" onclick="event.preventDefault();">
+                    <button class="sale-product__button cart-btn" onclick="event.preventDefault();">
                         <img
                             class="sale-product__button-icon"
                             src="/src/assets/icons/cart-icon.svg"
@@ -105,15 +39,17 @@
                         <span>담기</span>
                     </button>
                     <div class="sale-product__info">
-                        <div class="sale-product__promotion">주말만 최대 47%할인! 어른부터 우리 아이 칫솔치약까지</div>
+                        <div class="sale-product__promotion product-name">
+                            주말만 최대 47%할인! 어른부터 우리 아이 칫솔치약까지
+                        </div>
                         <h3 class="sale-product__name">
                             [켄트] 초극세모 칫솔4개입/6개입/8개입/프로화이트 치약 9종 (택1)
                         </h3>
                         <div class="sale-product__price">
-                            <div class="sale-product__regular-price">5,900원</div>
+                            <div class="sale-product__regular-price dimmed-price">5,900원</div>
                             <div class="sale-product__sale-price">
                                 <span>23%</span>
-                                <span>4,500원~</span>
+                                <span class="sales-price">4,500원~</span>
                             </div>
                         </div>
                         <div class="sale-product__review-count">
@@ -127,8 +63,8 @@
                     </div>
                 </a>
 
-                <a href="#" class="sale-product">
-                    <div class="sale-product__image-wrapper">
+                <a href="#" class="sale-product product-wrapper">
+                    <div class="sale-product__image-wrapper product-img">
                         <img
                             class="sale-product__image"
                             src="/src/assets/images/sale-product1.jpg"
@@ -138,7 +74,7 @@
                             <span>+10%쿠폰</span>
                         </div>
                     </div>
-                    <button class="sale-product__button" onclick="event.preventDefault();">
+                    <button class="sale-product__button cart-btn" onclick="event.preventDefault();">
                         <img
                             class="sale-product__button-icon"
                             src="/src/assets/icons/cart-icon.svg"
@@ -147,15 +83,17 @@
                         <span>담기</span>
                     </button>
                     <div class="sale-product__info">
-                        <div class="sale-product__promotion">주말만 최대 47%할인! 어른부터 우리 아이 칫솔치약까지</div>
+                        <div class="sale-product__promotion product-name">
+                            주말만 최대 47%할인! 어른부터 우리 아이 칫솔치약까지
+                        </div>
                         <h3 class="sale-product__name">
                             [켄트] 초극세모 칫솔4개입/6개입/8개입/프로화이트 치약 9종 (택1)
                         </h3>
                         <div class="sale-product__price">
-                            <div class="sale-product__regular-price">5,900원</div>
+                            <div class="sale-product__regular-price dimmed-price">5,900원</div>
                             <div class="sale-product__sale-price">
                                 <span>23%</span>
-                                <span>4,500원~</span>
+                                <span class="sales-price">4,500원~</span>
                             </div>
                         </div>
                         <div class="sale-product__review-count">
@@ -169,15 +107,15 @@
                     </div>
                 </a>
 
-                <a href="#" class="sale-product">
-                    <div class="sale-product__image-wrapper">
+                <a href="#" class="sale-product product-wrapper">
+                    <div class="sale-product__image-wrapper product-img">
                         <img
                             class="sale-product__image"
                             src="/src/assets/images/sale-product1.jpg"
                             alt="특가 제품 사진"
                         />
                     </div>
-                    <button class="sale-product__button" onclick="event.preventDefault();">
+                    <button class="sale-product__button cart-btn" onclick="event.preventDefault();">
                         <img
                             class="sale-product__button-icon"
                             src="/src/assets/icons/cart-icon.svg"
@@ -186,15 +124,17 @@
                         <span>담기</span>
                     </button>
                     <div class="sale-product__info">
-                        <div class="sale-product__promotion">주말만 최대 47%할인! 어른부터 우리 아이 칫솔치약까지</div>
+                        <div class="sale-product__promotion product-name">
+                            주말만 최대 47%할인! 어른부터 우리 아이 칫솔치약까지
+                        </div>
                         <h3 class="sale-product__name">
                             [켄트] 초극세모 칫솔4개입/6개입/8개입/프로화이트 치약 9종 (택1)
                         </h3>
                         <div class="sale-product__price">
-                            <div class="sale-product__regular-price">5,900원</div>
+                            <div class="sale-product__regular-price dimmed-price">5,900원</div>
                             <div class="sale-product__sale-price">
                                 <span>23%</span>
-                                <span>4,500원~</span>
+                                <span class="sales-price">4,500원~</span>
                             </div>
                         </div>
                         <div class="sale-product__review-count">
