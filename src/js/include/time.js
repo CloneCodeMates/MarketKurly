@@ -1,5 +1,7 @@
 includeHtml().then(() => {
     const timeUnits = document.querySelectorAll('#countdown-timer .time-units span');
+    const saleTitle = document.querySelector('#sale-title');
+    const saleSubtitle = document.querySelector('#sale-subtitle');
 
     // 카운트다운 타이머 업데이트 함수
     function updateCountdownTimer() {
@@ -9,6 +11,12 @@ includeHtml().then(() => {
         const today = now.getDay(); // 0(일요일) ~ 6(토요일)
         const isWeekend = today === 0 || today === 6; // 주말 여부
         const countdownHours = isWeekend ? 48 : 24; // 주말이면 48시간, 평일이면 24시간
+
+        // 주말이면 "주말특가", 평일이면 "일일특가"로 텍스트 변경
+        saleTitle.textContent = isWeekend ? '✨주말특가' : '🍀일일특가';
+
+        // "단 XX시간 한정 타임 혜택"에서 XX만 변경
+        saleSubtitle.textContent = `단 ${countdownHours}시간 한정 타임 혜택`;
 
         // 마감 시간을 설정 (오늘의 24:00:00 (자정) 또는 48시간 후 자정)
         deadline.setHours(countdownHours, 0, 0, 0);
