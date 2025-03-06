@@ -22,4 +22,10 @@ includeHtml().then(() => {
             rankingNumber.textContent = index + 1; // 1부터 시작하도록 설정
         }
     });
+
+    document.querySelectorAll('.ranking-product__button').forEach((button) => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // 기본 동작 방지
+        });
+    });
 });
