@@ -15,4 +15,11 @@ includeHtml().then(() => {
             prevEl: '#rank-prev-button',
         },
     });
+
+    document.querySelectorAll('#ranking-products .swiper-slide').forEach((slide, index) => {
+        const rankingNumber = slide.querySelector('.ranking-number');
+        if (rankingNumber) {
+            rankingNumber.textContent = index + 1; // 1부터 시작하도록 설정
+        }
+    });
 });
