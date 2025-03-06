@@ -25,11 +25,11 @@ includeHtml().then(() => {
 
     function addModal() {
         document.querySelectorAll('.ranking-product__button').forEach((button) => {
+            button.classList.add('cart-btn');
+
             button.addEventListener('click', (event) => {
                 event.preventDefault(); // 기본 동작 방지
             });
-
-            button.classList.add('cart-btn');
         });
 
         document.querySelectorAll('.ranking-product a').forEach((link) => {

@@ -53,32 +53,32 @@ includeHtml().then(() => {
     };
 
     // 모든 'cart-btn' 클릭 시 이벤트 처리
-    document.querySelectorAll('.cart-btn').forEach((cartBtn) => {
-        cartBtn.addEventListener('click', (e) => {
-            // 해당 제품 정보 가져오기
-            const productWrapper = e.target.closest('.product-wrapper');
-            const productImg = productWrapper.querySelector('.product-image img');
-            const productName = productWrapper.querySelector('.product-title');
-            const salesPrice = productWrapper.querySelector('.sales-price');
-            const dimmedPrice = productWrapper.querySelector('.dimmed-price');
+    document.body.addEventListener('click', (e) => {
+        const cartBtn = e.target.closest('.cart-btn');
+        if (!cartBtn) return; // 클릭한 요소가 cart-btn이 아니면 종료
+        // 해당 제품 정보 가져오기
+        const productWrapper = e.target.closest('.product-wrapper');
+        const productImg = productWrapper.querySelector('.product-image img');
+        const productName = productWrapper.querySelector('.product-title');
+        const salesPrice = productWrapper.querySelector('.sales-price');
+        const dimmedPrice = productWrapper.querySelector('.dimmed-price');
 
-            // 모달에 데이터 넣기
-            modalImg.src = productImg.src;
-            modalTitle.textContent = productName.textContent;
-            modalSubtitle.textContent = productName.textContent;
-            priceDiscounted.textContent = salesPrice.textContent;
-            priceOriginal.textContent = dimmedPrice ? dimmedPrice.textContent : '';
+        // 모달에 데이터 넣기
+        modalImg.src = productImg.src;
+        modalTitle.textContent = productName.textContent;
+        modalSubtitle.textContent = productName.textContent;
+        priceDiscounted.textContent = salesPrice.textContent;
+        priceOriginal.textContent = dimmedPrice ? dimmedPrice.textContent : '';
 
-            // 초기 합계 설정
-            updateTotalPrice();
+        // 초기 합계 설정
+        updateTotalPrice();
 
-            // 모달과 배경 표시
-            modalBackground.style.display = 'block';
-            cartModal.style.display = 'block';
+        // 모달과 배경 표시
+        modalBackground.style.display = 'block';
+        cartModal.style.display = 'block';
 
-            // 모달 열기 함수 호출 (스크롤 방지)
-            openModal();
-        });
+        // 모달 열기 함수 호출 (스크롤 방지)
+        openModal();
     });
 
     // 합계 가격 업데이트 함수
