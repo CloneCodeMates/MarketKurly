@@ -150,6 +150,10 @@
     z-index: 100;
 }
 
+.ranking-button:disabled {
+    display: none;
+}
+
 .prev-button {
     padding: 0;
     transform: translate(-50%, -50%);
