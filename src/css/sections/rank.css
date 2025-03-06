@@ -114,6 +114,10 @@
     font-weight: bold;
 }
 
+.ranking-product__title .dimmed-price {
+    display: none;
+}
+
 .ranking-product__discount-rate {
     color: rgb(250, 98, 47);
 }
