@@ -34,7 +34,13 @@
     display: flex;
 }
 
+#ranking-products .swiper-container {
+    width: 1050px;
+    overflow: hidden;
+}
+
 #ranking-products .swiper-slide {
+    width: 190px;
 }
 
 .ranking-product {

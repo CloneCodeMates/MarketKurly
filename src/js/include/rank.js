@@ -7,8 +7,9 @@ includeHtml().then(() => {
     }
 
     new Swiper(rankSwiper, {
-        slidesPerView: 'auto',
+        slidesPerView: 5, // 한 번에 보이는 슬라이드 개수
         slidesPerGroup: 5, // 버튼 클릭 시 이동하는 슬라이드 개수
+        spaceBetween: 25,
         navigation: {
             nextEl: '#rank-next-button',
             prevEl: '#rank-prev-button',
