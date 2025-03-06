@@ -23,9 +23,27 @@ includeHtml().then(() => {
         }
     });
 
-    document.querySelectorAll('.ranking-product__button').forEach((button) => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault(); // 기본 동작 방지
+    function addModal() {
+        document.querySelectorAll('.ranking-product__button').forEach((button) => {
+            button.addEventListener('click', (event) => {
+                event.preventDefault(); // 기본 동작 방지
+            });
+
+            button.classList.add('cart-btn');
         });
-    });
+
+        document.querySelectorAll('.ranking-product a').forEach((link) => {
+            link.classList.add('product-wrapper'); // product-wrapper 클래스 추가
+        });
+
+        document.querySelectorAll('.ranking-product__image-wrapper').forEach((wrapper) => {
+            wrapper.classList.add('product-image'); // product-wrapper 클래스 추가
+        });
+
+        document.querySelectorAll('.ranking-product__title').forEach((title) => {
+            title.classList.add('product-title'); // product-wrapper 클래스 추가
+        });
+    }
+
+    addModal();
 });
