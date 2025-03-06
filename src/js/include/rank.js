@@ -40,7 +40,7 @@ includeHtml().then(() => {
             wrapper.classList.add('product-image'); // product-wrapper 클래스 추가
         });
 
-        document.querySelectorAll('.ranking-product__title').forEach((title) => {
+        document.querySelectorAll('.ranking-product__title p').forEach((title) => {
             title.classList.add('product-title'); // product-wrapper 클래스 추가
         });
     }
