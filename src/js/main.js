@@ -7,3 +7,5 @@ import './include/top-banner.js';
 import './include/event.js';
 import './include/modal.js';
 import './include/rank.js';
+import './include/time.js';
+import './include/nav.js';
