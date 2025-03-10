@@ -1,7 +1,5 @@
 /* modal.js */
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOMContentLoaded 이벤트 발생');
-
     // includeHtml().then(() => {
     // 모달 관련 변수
     const modalBackground = document.getElementById('modal-background');
@@ -57,8 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 모든 'cart-btn' 클릭 시 이벤트 처리
     document.body.addEventListener('click', (e) => {
-        console.log('모달 버튼 클릭됨');
-
         const cartBtn = e.target.closest('.cart-btn');
         if (!cartBtn) return; // 클릭한 요소가 cart-btn이 아니면 종료
         // 해당 제품 정보 가져오기
