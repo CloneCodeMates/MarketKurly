@@ -1,26 +1,27 @@
-includeHtml().then(() => {
-    // Swiper wrapper 요소 찾기
-    const goodsSwiperContainer = document.querySelector("#goods-swiper .swiper-container");
+document.addEventListener('DOMContentLoaded', function () {
+    includeHtml().then(() => {
+        // Swiper wrapper 요소 찾기
+        const goodsSwiperContainer = document.querySelector('#goods-swiper .swiper-container');
 
-    if (!goodsSwiperContainer) {
-        console.log("goods Swiper 를 찾을 수 없습니다.");
-        return;
-    }
+        if (!goodsSwiperContainer) {
+            console.log('goods Swiper 를 찾을 수 없습니다.');
+            return;
+        }
 
-    // Swiper 초기화
-    new Swiper(goodsSwiperContainer, {
-        slidesPerView: 'auto', // 한 번에 보이는 슬라이드 개수
-        slidesPerGroup: 4, // 버튼 클릭 시 이동하는 슬라이드 개수
-        spaceBetween: 18,
+        // Swiper 초기화
+        new Swiper(goodsSwiperContainer, {
+            slidesPerView: 'auto', // 한 번에 보이는 슬라이드 개수
+            slidesPerGroup: 4, // 버튼 클릭 시 이동하는 슬라이드 개수
 
-        // 마우스 드래그 관련 옵션
-        simulateTouch: true, // 마우스로 드래그 가능
-        grabCursor: true, // 마우스 커서를 손 모양으로 변경
+            // 마우스 드래그 관련 옵션
+            simulateTouch: true, // 마우스로 드래그 가능
+            grabCursor: true, // 마우스 커서를 손 모양으로 변경
 
-        loop: false, // 무한 루프 비활성화
-        navigation: {
-            nextEl: "#swiper-next-btn",
-            prevEl: "#swiper-prev-btn",
-        },
+            loop: false, // 무한 루프 비활성화
+            navigation: {
+                nextEl: '#swiper-next-btn',
+                prevEl: '#swiper-prev-btn',
+            },
+        });
     });
 });

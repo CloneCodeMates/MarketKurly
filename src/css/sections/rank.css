@@ -41,6 +41,11 @@
 
 #ranking-products .swiper-slide {
     width: 190px;
+    margin-right: 25px;
+}
+
+#ranking-products .swiper-slide:nth-child(5n) {
+    margin-right: 0px;
 }
 
 .ranking-product {
