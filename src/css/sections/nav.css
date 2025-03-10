@@ -224,7 +224,7 @@
 .category-icon {
     width: 24px;
     height: 24px;
-    background-image: url('/src/assets/icons/nav/nav-default-sprite.png');
+    background-image: url(/src/assets/icons/nav/nav-default-sprite.png);
     background-repeat: no-repeat;
     background-size: calc(27 * 24px) 24px;
     /* 전체 스프라이트 크기 */
@@ -346,7 +346,7 @@
 
 /* Hover 시 hover 스프라이트로 이미지 변경 */
 .category-item:hover .category-icon {
-    background-image: url('/src/assets/icons/nav/nav-hover-sprite.png');
+    background-image: url(/src/assets/icons/nav/nav-hover-sprite.png);
 }
 
 /* 네비게이션 메뉴 */
