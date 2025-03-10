@@ -2,10 +2,10 @@
 
 import '/src/js/include/goods.js';
 import '/src/js/include/sidebar.js';
-import './include/header.js';
-import './include/top-banner.js';
-import './include/event.js';
-import './include/modal.js';
-import './include/rank.js';
-import './include/time.js';
-import './include/nav.js';
+import '/src/js/include/header.js';
+import '/src/js/include/top-banner.js';
+import '/src/js/include/event.js';
+import '/src/js/include/modal.js';
+import '/src/js/include/rank.js';
+import '/src/js/include/time.js';
+import '/src/js/include/nav.js';
