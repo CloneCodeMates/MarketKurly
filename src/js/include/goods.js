@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
         new Swiper(goodsSwiperContainer, {
             slidesPerView: 'auto', // 한 번에 보이는 슬라이드 개수
             slidesPerGroup: 4, // 버튼 클릭 시 이동하는 슬라이드 개수
-            spaceBetween: 18,
 
             // 마우스 드래그 관련 옵션
             simulateTouch: true, // 마우스로 드래그 가능
