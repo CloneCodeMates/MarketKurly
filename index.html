@@ -1,24 +1,1518 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>컬리 - 마켓컬리/뷰티컬리</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>컬리 - 마켓컬리/뷰티컬리</title>
+        <!-- favicon -->
+        <link rel="icon" href="https://res.kurly.com/favicon.ico" />
+        <!-- 스타일 및 스크립트 -->
+        <link rel="stylesheet" href="/src/css/style.css" />
+        <script src="/src/js/main.js" type="module"></script>
 
-    <!-- favicon -->
-    <link rel="icon" href="https://res.kurly.com/favicon.ico" />
-    <!-- 스타일 및 스크립트 -->
-    <link rel="stylesheet" href="/src/css/style.css" />
-    <script src="/src/js/main.js" type="module"></script>
+        <!-- Swiper 라이브러리 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    </head>
 
-    <!-- Swiper 라이브러리 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-</head>
+    <body>
+        <!-- top-banner -->
+        <div id="top-banner">
+            <div id="top-banner__container">
+                <a href="#" id="top-banner__link">
+                    <div id="top-banner__text">
+                        지금 가입하고,
+                        <b>최대 1만원 할인 쿠폰</b>
+                        받아가세요!
+                    </div>
+                </a>
 
-<body>
-    <section data-include-file="/src/pages/includes/top-banner.html" class="top-banner-wrap includeJs"></section>
+                <button type="button" id="top-banner__close-button">
+                    <img src="/src/assets/icons/close-icon.svg" alt="닫기 버튼" />
+                </button>
+            </div>
+        </div>
+
+        <!-- header -->
+        <div id="modal-background"></div>
+        <!-- 모달창 -->
+        <div id="search-modal">
+            <div id="modal-content">검색어를 입력해주세요.</div>
+            <div id="modal-footer">
+                <button id="confirm-button">확인</button>
+            </div>
+        </div>
+        <!-- 헤더 -->
+        <header id="header">
+            <!-- 상단바 -->
+            <ul id="header-topbar">
+                <!-- 회원가입 -->
+                <li>
+                    <a href="#" id="header-topbar__signup">회원가입</a>
+                </li>
+                <div class="header-topbar__divider"></div>
+
+                <!-- 로그인 -->
+                <li>
+                    <a href="#" id="header-topbar__login">로그인</a>
+                </li>
+                <div class="header-topbar__divider"></div>
+
+                <!-- 고객센터 -->
+                <li id="header-topbar__support">
+                    <a href="#" class="header-topbar__support-link">
+                        고객센터
+                        <span class="down-arrow"></span>
+                    </a>
+                    <ul id="header-topbar__support-dropdown">
+                        <li class="support-dropdown-item">공지사항</li>
+                        <li class="support-dropdown-item">자주하는 질문</li>
+                        <li class="support-dropdown-item">1:1 문의</li>
+                        <li class="support-dropdown-item">대량주문 문의</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 헤더 유틸리티 -->
+            <div id="header-utility">
+                <!-- 로고 -->
+                <div id="header-utility__logo">
+                    <img src="/src/assets/icons/header/market-kurly-logo.svg" alt="마켓컬리 로고" />
+
+                    <!-- 마켓 변경 -->
+                    <div id="header-utility__switch-market">
+                        <a href="#" class="active switch-kurly">마켓컬리</a>
+                        <div class="market-divider"></div>
+                        <a href="/beauty" class="switch-kurly">뷰티컬리</a>
+                    </div>
+                </div>
+
+                <!-- 검색창 -->
+                <form action="/" method="get" id="header-utility__search">
+                    <input type="text" name="search" id="search__input" placeholder="검색어를 입력해주세요" />
+                    <button type="button" id="search__clear-button"></button>
+                    <button type="submit" id="search__button"></button>
+                </form>
+
+                <!-- 사용자 메뉴 -->
+                <ul id="header-utility__user-menu">
+                    <li id="user-menu__wrap">
+                        <a href="#" id="user-menu__delivery"></a>
+                        <div id="delivery__container">
+                            <div id="delivery__content">
+                                <strong>배송지를 등록</strong>
+                                <span>하고</span>
+                                <br />
+                                <p>구매 가능한 상품을 확인하세요!</p>
+                            </div>
+                            <div id="delivery__button-wrap">
+                                <button id="login-button" type="button">로그인</button>
+                                <button id="address-search-button" type="button">
+                                    <img src="/src/assets/icons/header/white-search-icon.png" alt="주소 검색" />
+                                    <span>주소 검색</span>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" id="user-menu__favorites"></a>
+                    </li>
+                    <li>
+                        <a href="#" id="user-menu__cart"></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- nav -->
+        <nav id="nav">
+            <ul id="nav__list">
+                <!-- 카테고리 -->
+                <li id="nav__category">
+                    <button id="category-btn">
+                        <span></span>
+                        <span>카테고리</span>
+                    </button>
+                    <!-- 드롭다운 카테고리 목록 -->
+                    <ul id="category-menu">
+                        <li class="category-item" data-pos="0">
+                            <span class="category-icon"></span>
+                            <a href="#">채소</a>
+                        </li>
+                        <li class="category-item" data-pos="1">
+                            <span class="category-icon"></span>
+                            <a href="#">과일·견과·쌀</a>
+                        </li>
+                        <li class="category-item" data-pos="2">
+                            <span class="category-icon"></span>
+                            <a href="#">수산·해산·건어물</a>
+                        </li>
+                        <li class="category-item" data-pos="3">
+                            <span class="category-icon"></span>
+                            <a href="#">정육·가공육·계란</a>
+                        </li>
+                        <li class="category-item" data-pos="4">
+                            <span class="category-icon"></span>
+                            <a href="#">국·반찬·메인요리</a>
+                        </li>
+                        <li class="category-item" data-pos="5">
+                            <span class="category-icon"></span>
+                            <a href="#">간편식·밀키트·샐러드</a>
+                        </li>
+                        <li class="category-item" data-pos="6">
+                            <span class="category-icon"></span>
+                            <a href="#">면·양념·오일</a>
+                        </li>
+                        <li class="category-item" data-pos="7">
+                            <span class="category-icon"></span>
+                            <a href="#">생수·음료</a>
+                        </li>
+                        <li class="category-item" data-pos="8">
+                            <span class="category-icon"></span>
+                            <a href="#">커피·차</a>
+                        </li>
+                        <li class="category-item" data-pos="9">
+                            <span class="category-icon"></span>
+                            <a href="#">간식·과자·떡</a>
+                        </li>
+                        <li class="category-item" data-pos="10">
+                            <span class="category-icon"></span>
+                            <a href="#">베이커리</a>
+                        </li>
+                        <li class="category-item" data-pos="11">
+                            <span class="category-icon"></span>
+                            <a href="#">유제품</a>
+                        </li>
+                        <li class="category-item" data-pos="12">
+                            <span class="category-icon"></span>
+                            <a href="#">건강식품</a>
+                        </li>
+                        <li class="category-item" data-pos="13">
+                            <span class="category-icon"></span>
+                            <a href="#">와인·위스키·데낄라</a>
+                        </li>
+                        <li class="category-item" data-pos="14">
+                            <span class="category-icon"></span>
+                            <a href="#">전통주</a>
+                        </li>
+                        <li class="category-item" data-pos="15">
+                            <span class="category-icon"></span>
+                            <a href="#">주방용품</a>
+                        </li>
+                        <li class="category-item" data-pos="16">
+                            <span class="category-icon"></span>
+                            <a href="#">생활용품·리빙</a>
+                        </li>
+                        <li class="category-item" data-pos="17">
+                            <span class="category-icon"></span>
+                            <a href="#">가전제품</a>
+                        </li>
+                        <li class="category-item" data-pos="18">
+                            <span class="category-icon"></span>
+                            <a href="#">가구·인테리어</a>
+                        </li>
+                        <li class="category-item" data-pos="19">
+                            <span class="category-icon"></span>
+                            <a href="#">유아동</a>
+                        </li>
+                        <li class="category-item" data-pos="20">
+                            <span class="category-icon"></span>
+                            <a href="#">스포츠·레져·캠핑</a>
+                        </li>
+                        <li class="category-item" data-pos="21">
+                            <span class="category-icon"></span>
+                            <a href="#">반려동물</a>
+                        </li>
+                        <li class="category-item" data-pos="22">
+                            <span class="category-icon"></span>
+                            <a href="#">럭셔리뷰티</a>
+                        </li>
+                        <li class="category-item" data-pos="23">
+                            <span class="category-icon"></span>
+                            <a href="#">스킨케어·메이크업</a>
+                        </li>
+                        <li class="category-item" data-pos="24">
+                            <span class="category-icon"></span>
+                            <a href="#">헤어·바디·구강</a>
+                        </li>
+                        <li class="category-item" data-pos="25">
+                            <span class="category-icon"></span>
+                            <a href="#">패션</a>
+                        </li>
+                        <li class="category-item" data-pos="26">
+                            <span class="category-icon"></span>
+                            <a href="#">컬리상품권</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 내비게이션 메뉴 -->
+                <li id="nav__center">
+                    <ul id="nav__items">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">신상품</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">베스트</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">알뜰쇼핑</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">특가/혜택</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- 배송 안내 -->
+                <li id="nav__noti">
+                    <div class="delivery-notice">
+                        <span>샛별·하루</span>
+                        배송안내
+                    </div>
+                </li>
+
+                <!-- 검색창과 사용자 메뉴가 이동될 영역 -->
+                <li id="nav-extra"></li>
+            </ul>
+        </nav>
+
+        <!-- event -->
+        <section id="event">
+            <div class="swiper">
+                <div class="swiper-wrapper" id="event-container">
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner1.png"
+                                alt="이벤트 배너 1"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner2.png"
+                                alt="이벤트 배너 2"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner3.png"
+                                alt="이벤트 배너 3"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner4.jpg"
+                                alt="이벤트 배너 4"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner5.png"
+                                alt="이벤트 배너 5"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner6.jpg"
+                                alt="이벤트 배너 6"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner7.png"
+                                alt="이벤트 배너 7"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner8.jpg"
+                                alt="이벤트 배너 8"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner9.jpg"
+                                alt="이벤트 배너 9"
+                            />
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="event-link">
+                            <img
+                                class="event-image"
+                                src="/src/assets/images/event/event-banner10.jpg"
+                                alt="이벤트 배너 10"
+                            />
+                        </a>
+                    </div>
+                </div>
+
+                <button class="event-button" id="event-prev-button"></button>
+                <button class="event-button" id="event-next-button"></button>
+
+                <div id="event-page-index">1 / 10</div>
+            </div>
+        </section>
+
+        <!-- goods -->
+        <section id="goods">
+            <div id="goods-title">
+                <a href="#" id="goods-link">
+                    <span>🛒지금 가장 많이 담는 특가</span>
+                    <img src="/src/assets/icons/goods/goods-more-btn.svg" alt="더보기 아이콘" />
+                </a>
+                <p id="goods-subtitle">컬리 추천 특가템 최대 50%</p>
+            </div>
+            <div id="goods-swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img1.jpeg" alt="제품1" />
+                                    <div class="product__offer-tag">
+                                        <span>+10%쿠폰</span>
+                                    </div>
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">
+                                        [하겐다즈] 파인트 클래식 아이스크림 7종 (택1)
+                                    </h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">15,500원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">39%</span>
+                                            <span class="sales-price">9,400원~</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">9,999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img2.jpeg" alt="제품2" />
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">[기획상품] 칠레산 블루베리 125g*3팩</h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">19,900원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">40%</span>
+                                            <span class="sales-price">9,990원</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">9,999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img3.jpeg" alt="제품3" />
+                                    <div class="product__offer-tag">
+                                        <span>+10%쿠폰</span>
+                                    </div>
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">[KF365] 1+ 한우 국거리 300g(냉장)</h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">15,900원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">25%</span>
+                                            <span class="sales-price">11,920원</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">9,999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img4.jpeg" alt="제품4" />
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">
+                                        [아이엠베이글] 시그니처 베이글 샌드위치 2종
+                                    </h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">7,800원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">15%</span>
+                                            <span class="sales-price">6,630원~</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img1.jpeg" alt="제품1" />
+                                    <div class="product__offer-tag">
+                                        <span>+10%쿠폰</span>
+                                    </div>
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">
+                                        [하겐다즈] 파인트 클래식 아이스크림 7종 (택1)
+                                    </h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">15,500원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">39%</span>
+                                            <span class="sales-price">9,400원~</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">9,999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img2.jpeg" alt="제품2" />
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">[기획상품] 칠레산 블루베리 125g*3팩</h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">19,900원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">40%</span>
+                                            <span class="sales-price">9,990원</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">9,999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img3.jpeg" alt="제품3" />
+                                    <div class="product__offer-tag">
+                                        <span>+10%쿠폰</span>
+                                    </div>
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">[KF365] 1+ 한우 국거리 300g(냉장)</h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">15,900원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">25%</span>
+                                            <span class="sales-price">11,920원</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">9,999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="product-wrapper">
+                                <div class="product-img product-image">
+                                    <img src="/src/assets/images/product-img4.jpeg" alt="제품4" />
+                                </div>
+                                <button class="cart-btn" onclick="event.preventDefault();">
+                                    <img src="/src/assets/icons/cart-icon.svg" alt="장바구니 담기 버튼" />
+                                    담기
+                                </button>
+                                <div class="product-info">
+                                    <h3 class="product-name product-title">
+                                        [아이엠베이글] 시그니처 베이글 샌드위치 2종
+                                    </h3>
+                                    <div class="product-price">
+                                        <span class="dimmed-price">7,800원</span>
+                                        <div class="discount">
+                                            <span class="discount-rate">15%</span>
+                                            <span class="sales-price">6,630원~</span>
+                                        </div>
+                                    </div>
+                                    <div class="review-count">
+                                        <div class="review-icon"><svg></svg></div>
+                                        <span class="review-number">999+</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide__view-all">
+                                <a href="#" class="view-all__link">
+                                    <span class="view-all__icon"></span>
+                                    <span class="view-all__text">전체보기</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="swiper-btn" id="swiper-prev-btn"></button>
+                <button class="swiper-btn" id="swiper-next-btn"></button>
+            </div>
+        </section>
+
+        <!-- time -->
+        <section id="time-container">
+            <section id="sale-timer">
+                <h2 id="sale-title">✨주말특가</h2>
+                <h3 id="sale-subtitle">단 48시간 한정 타임 혜택</h3>
+                <div id="countdown-timer">
+                    <img id="timer-icon" src="/src/assets/icons/time/clock-icon.svg" alt="시계 아이콘" />
+                    <div class="time-units">
+                        <span>00</span>
+                        <span>00</span>
+                        <span>00</span>
+                    </div>
+                </div>
+                <p id="sale-message">망설이면 늦어요!</p>
+            </section>
+
+            <section id="sale-products">
+                <a href="#" class="sale-product product-wrapper">
+                    <div class="sale-product__image-wrapper product-image">
+                        <img
+                            class="sale-product__image"
+                            src="/src/assets/images/time/time-sale-product1.jpg"
+                            alt="특가 제품 사진1"
+                        />
+                        <div class="product__offer-tag">
+                            <span class="deal-title">주말특가</span>
+                        </div>
+                    </div>
+                    <button class="sale-product__button cart-btn" onclick="event.preventDefault();">
+                        <img
+                            class="sale-product__button-icon"
+                            src="/src/assets/icons/cart-icon.svg"
+                            alt="장바구니 아이콘"
+                        />
+                        <span>담기</span>
+                    </button>
+                    <div class="sale-product__info">
+                        <div class="sale-product__promotion">온 가족이 함께 즐기는 간식 떡</div>
+                        <h3 class="sale-product__name product-title">[창억] 인기 프리미엄 인절미 4종 택 1</h3>
+                        <div class="sale-product__price">
+                            <div class="sale-product__regular-price dimmed-price">11,500원</div>
+                            <div class="sale-product__sale-price">
+                                <span>25%</span>
+                                <span class="sales-price">8,625원~</span>
+                            </div>
+                        </div>
+                        <div class="sale-product__review-count">
+                            <img
+                                class="sale-product__review-icon"
+                                src="/src/assets/icons/review-icon.svg"
+                                alt="리뷰 아이콘"
+                            />
+                            <span class="sale-product__review-number">9,999+</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="sale-product product-wrapper">
+                    <div class="sale-product__image-wrapper product-image">
+                        <img
+                            class="sale-product__image"
+                            src="/src/assets/images/time/time-sale-product2.png"
+                            alt="특가 제품 사진2"
+                        />
+                        <div class="product__offer-tag">
+                            <span class="deal-title">주말특가</span>
+                        </div>
+                    </div>
+                    <button class="sale-product__button cart-btn" onclick="event.preventDefault();">
+                        <img
+                            class="sale-product__button-icon"
+                            src="/src/assets/icons/cart-icon.svg"
+                            alt="장바구니 아이콘"
+                        />
+                        <span>담기</span>
+                    </button>
+                    <div class="sale-product__info">
+                        <div class="sale-product__promotion">논슬립 옷걸이부터 바지걸이 세트까지!</div>
+                        <h3 class="sale-product__name product-title">
+                            [진심감성] 어깨뿔방지 논슬립 옷걸이 30 set 외 16종 (택1)
+                        </h3>
+                        <div class="sale-product__price">
+                            <div class="sale-product__regular-price dimmed-price">28,200원</div>
+                            <div class="sale-product__sale-price">
+                                <span>63%</span>
+                                <span class="sales-price">10,400원~</span>
+                            </div>
+                        </div>
+                        <div class="sale-product__review-count">
+                            <img
+                                class="sale-product__review-icon"
+                                src="/src/assets/icons/review-icon.svg"
+                                alt="리뷰 아이콘"
+                            />
+                            <span class="sale-product__review-number">327</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="sale-product product-wrapper">
+                    <div class="sale-product__image-wrapper product-image">
+                        <img
+                            class="sale-product__image"
+                            src="/src/assets/images/time/time-sale-product3.jpeg"
+                            alt="특가 제품 사진3"
+                        />
+                        <div class="product__offer-tag">
+                            <span>+15%쿠폰</span>
+                        </div>
+                    </div>
+                    <button class="sale-product__button cart-btn" onclick="event.preventDefault();">
+                        <img
+                            class="sale-product__button-icon"
+                            src="/src/assets/icons/cart-icon.svg"
+                            alt="장바구니 아이콘"
+                        />
+                        <span>담기</span>
+                    </button>
+                    <div class="sale-product__info">
+                        <div class="sale-product__promotion">단 24시간, 15% 추가 쿠폰과 본품급 증정까지!</div>
+                        <h3 class="sale-product__name product-title">
+                            [크리니크] 핑크수분크림 75ml+50ml 기획세트 외 10종 (택1)
+                        </h3>
+                        <div class="sale-product__price">
+                            <div class="sale-product__regular-price dimmed-price">64,000원</div>
+                            <div class="sale-product__sale-price">
+                                <span>15%</span>
+                                <span class="sales-price">54,400원~</span>
+                            </div>
+                        </div>
+                        <div class="sale-product__review-count">
+                            <img
+                                class="sale-product__review-icon"
+                                src="/src/assets/icons/review-icon.svg"
+                                alt="리뷰 아이콘"
+                            />
+                            <span class="sale-product__review-number">999+</span>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </section>
+
+        <!-- banner -->
+        <div id="banner">
+            <a href="#" id="banner-link">
+                <span>
+                    <img src="/src/assets/images/banner.jpg" alt="멤버스위크 혜택 무료로 받기" id="banner-img" />
+                </span>
+            </a>
+        </div>
+
+        <!-- rank -->
+        <section id="ranking">
+            <section id="ranking-title">
+                <h2>🏆 실시간 인기 랭킹 🏆</h2>
+                <p>가장 인기있는 상품만 모아보세요!</p>
+            </section>
+
+            <section id="ranking-products">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product1.jpg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[하트티라미수X아이브 한정판] 엠파시 티라미수(딸기우유맛)</p>
+                                                <div>
+                                                    <div class="dimmed-price"></div>
+                                                    <span class="ranking-product__discount-rate"></span>
+                                                    <span class="sales-price">29,000원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product2.jpeg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="product__offer-tag">
+                                            <span>+10%쿠폰</span>
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[스윗밸런스] 오늘의 샐러드 10종 (리뉴얼) (택1)</p>
+                                                <div>
+                                                    <div class="dimmed-price">5,400원</div>
+                                                    <span class="ranking-product__discount-rate">10%</span>
+                                                    <span class="sales-price">4,860원~</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product3.jpeg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[Dole] 스위티오 바나나 2종</p>
+                                                <div>
+                                                    <div class="dimmed-price">5,990원</div>
+                                                    <span class="ranking-product__discount-rate">25%</span>
+                                                    <span class="sales-price">4,490원~</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product4.jpg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="product__offer-tag">
+                                            <span>+10%쿠폰</span>
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[Kulry's] 국산콩 두부 500g</p>
+                                                <div>
+                                                    <div class="dimmed-price"></div>
+                                                    <span class="ranking-product__discount-rate"></span>
+                                                    <span class="sales-price">3,200원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product5.jpg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="product__offer-tag">
+                                            <span>+1만원쿠폰</span>
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[고메] 크리스피 너겟</p>
+                                                <div>
+                                                    <div class="dimmed-price">9,980원</div>
+                                                    <span class="ranking-product__discount-rate">50%</span>
+                                                    <span class="sales-price">4,990원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product1.jpg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[하트티라미수X아이브 한정판] 엠파시 티라미수(딸기우유맛)</p>
+                                                <div>
+                                                    <div class="dimmed-price"></div>
+                                                    <span class="ranking-product__discount-rate"></span>
+                                                    <span class="sales-price">29,000원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product2.jpeg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="product__offer-tag">
+                                            <span>+10%쿠폰</span>
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[스윗밸런스] 오늘의 샐러드 10종 (리뉴얼) (택1)</p>
+                                                <div>
+                                                    <div class="dimmed-price">5,400원</div>
+                                                    <span class="ranking-product__discount-rate">10%</span>
+                                                    <span class="sales-price">4,860원~</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product3.jpeg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[Dole] 스위티오 바나나 2종</p>
+                                                <div>
+                                                    <div class="dimmed-price">5,990원</div>
+                                                    <span class="ranking-product__discount-rate">25%</span>
+                                                    <span class="sales-price">4,490원~</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product4.jpg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="product__offer-tag">
+                                            <span>+10%쿠폰</span>
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[Kulry's] 국산콩 두부 500g</p>
+                                                <div>
+                                                    <div class="dimmed-price"></div>
+                                                    <span class="ranking-product__discount-rate"></span>
+                                                    <span class="sales-price">3,200원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="ranking-product">
+                                <a href="#">
+                                    <div>
+                                        <div class="ranking-product__image-wrapper">
+                                            <img
+                                                class="ranking-product__image"
+                                                src="/src/assets/images/rank/rank-product5.jpg"
+                                                alt="랭킹 제품"
+                                            />
+                                        </div>
+                                        <div class="product__offer-tag">
+                                            <span>+1만원쿠폰</span>
+                                        </div>
+                                        <div class="ranking-product__info">
+                                            <span class="ranking-number"></span>
+                                            <div class="ranking-product__title">
+                                                <p>[고메] 크리스피 너겟</p>
+                                                <div>
+                                                    <div class="dimmed-price">9,980원</div>
+                                                    <span class="ranking-product__discount-rate">50%</span>
+                                                    <span class="sales-price">4,990원</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ranking-product__button-wrapper">
+                                            <button class="ranking-product__button">
+                                                <img
+                                                    class="ranking-product__button-icon"
+                                                    src="/src/assets/icons/cart-icon.svg"
+                                                    alt="장바구니 아이콘"
+                                                />
+                                                <span>담기</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="ranking-button prev-button" id="rank-prev-button" type="button"></button>
+                    <button class="ranking-button next-button" id="rank-next-button" type="button"></button>
+                </div>
+            </section>
+
+            <section id="view-all">
+                <a href="#">전체보기</a>
+            </section>
+        </section>
+
+        <!-- modal -->
+        <div id="modal-background"></div>
+        <!-- 모달창 -->
+        <div class="cart-modal" role="dialog">
+            <!-- 제품 -->
+            <div class="modal__product">
+                <!-- 제품 이미지 -->
+                <div class="modal__img-wrapper">
+                    <img class="modal__img" />
+                </div>
+                <!-- 제품 제목 -->
+                <div class="modal__title-wrapper">
+                    <span class="modal__title"></span>
+                </div>
+            </div>
+
+            <!-- 가격 및 수량 선택 -->
+            <div class="modal__details">
+                <div class="modal__info">
+                    <div class="modal__subtitle-wrapper">
+                        <span class="modal__subtitle"></span>
+                    </div>
+
+                    <div class="modal__product-pricing">
+                        <div class="price-container">
+                            <span class="price-discounted"></span>
+                            <span class="price-original"></span>
+                        </div>
+
+                        <div class="quantity-selector">
+                            <button
+                                type="button"
+                                aria-label="수량내리기"
+                                class="quantity-btn quantity-btn__decrease"
+                                disabled
+                            ></button>
+                            <div class="quantity-count">1</div>
+                            <button
+                                type="button"
+                                aria-label="수량올리기"
+                                class="quantity-btn quantity-btn__increase"
+                            ></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 합계 -->
+            <div class="modal__total">
+                <div class="total-container">
+                    <div class="total">
+                        <p class="total__label">합계</p>
+                        <div class="total__amount">
+                            <span class="total__price">0</span>
+                            <span class="total__currency">원</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 버튼 -->
+            <div class="modal__actions-btn">
+                <button class="modal__btn btn__cancel"><span>취소</span></button>
+                <button class="modal__btn btn__add-to-cart"><span>장바구니 담기</span></button>
+            </div>
+        </div>
+
+        <!-- sidebar -->
+        <aside id="sidebar">
+            <div id="sidebar-container">
+                <div id="sidebar-banner">
+                    <img
+                        src="/src/assets/images/sidebar-banner.jpg"
+                        alt="샛별, 하루 배송 안내"
+                        id="sidebar-banner__img"
+                    />
+                </div>
+                <div id="sidebar-links">
+                    <a href="#" target="_self">
+                        <div class="sidebar-links__item">컬리 고객 제도</div>
+                    </a>
+                    <a href="https://lounge.kurly.com/curator-program" target="_blank" rel="noreferrer">
+                        <div class="sidebar-links__item">컬리 큐레이터</div>
+                    </a>
+                    <a href="https://www.kurly.com/recipe" target="_blank" rel="noreferrer">
+                        <div class="sidebar-links__item">레시피</div>
+                    </a>
+                </div>
+                <div id="sidebar__recent-products">
+                    <button type="button" class="recent-products__btn">
+                        <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 11L9 7L13 11" stroke="currentColor" stroke-width="1.3"></path>
+                        </svg>
+                    </button>
+                    최근 본 상품
+                    <!-- 최근 본 상품 슬라이드 -->
+                    <div class="swiper aside-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- 최근 본 상품이 동적으로 추가될 부분 -->
+                        </div>
+                    </div>
+                    <button type="button" class="recent-products__btn">
+                        <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 7L9 11L5 7" stroke="currentColor" stroke-width="1.3"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- footer -->
+        <footer>
+            <div id="footer-inner">
+                <div id="footer-inner-top">
+                    <!-- 고객 센터 -->
+                    <section>
+                        <p id="customer-center__title">고객행복센터</p>
+
+                        <ul>
+                            <li id="customer-center__contact">
+                                <strong id="customer-center__contact-tell">
+                                    1644-1107
+                                    <span id="customer-center__contact-info">월~토요일 오전 7시 - 오후 6시</span>
+                                </strong>
+                            </li>
+                            <li class="customer-center__item">
+                                <a href="" class="customer-center__item-title">카카오톡 문의</a>
+                                <div class="customer-center__item-info">
+                                    월~토요일
+                                    <img src="/src/assets/icons/footer/divider-vertical.svg" class="footer-divider" />
+                                    오전 7시 - 오후 6시
+                                    <br />
+                                    일/공휴일
+                                    <img src="/src/assets/icons/footer/divider-vertical.svg" class="footer-divider" />
+                                    오전 7시 - 오후 1시
+                                </div>
+                            </li>
+                            <li class="customer-center__item">
+                                <a href="" class="customer-center__item-title">1:1 문의</a>
+                                <div class="customer-center__item-info">
+                                    365일
+                                    <br />
+                                    고객센터 운영시간에 순차적으로 답변드리겠습니다.
+                                </div>
+                            </li>
+                            <li class="customer-center__item">
+                                <a href="" class="customer-center__item-title">대량주문 문의</a>
+                                <div class="customer-center__item-info">
+                                    월~금요일
+                                    <img src="/src/assets/icons/footer/divider-vertical.svg" class="footer-divider" />
+                                    오전 9시 - 오후 6시
+                                    <br />
+                                    점심시간
+                                    <img src="/src/assets/icons/footer/divider-vertical.svg" class="footer-divider" />
+                                    낮 12시 - 오후 1시
+                                </div>
+                            </li>
+                            <li id="customer-center__non-member">
+                                <div>
+                                    비회원 문의 :
+                                    <a href="mailto:help@kurlycorp.com">help@kurlycorp.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- 회사 정보 -->
+                    <section>
+                        <ul id="about-kurly__link">
+                            <li><a href="" target="_self">컬리소개</a></li>
+                            <li>
+                                <a
+                                    href="https://www.youtube.com/embed/WEep7BcboMQ?rel=0&showinfo=0&wmode=opaque&enablejsapi=1"
+                                    target="_self"
+                                >
+                                    컬리소개영상
+                                </a>
+                            </li>
+                            <li><a href="https://ir.kurly.com" target="_blank">투자정보</a></li>
+                            <li><a href="https://kurly.career.greetinghr.com" target="_blank">인재채용</a></li>
+                            <li><a href="" target="_self">이용약관</a></li>
+                            <li><a href="" style="font-weight: 500" target="_self">개인정보처리방침</a></li>
+                            <li><a href="" target="_self">이용안내</a></li>
+                        </ul>
+                        <ul id="about-kurly__info">
+                            <li>
+                                법인명 (상호) : 주식회사 컬리
+                                <span class="info-divider"></span>
+                                사업자등록번호 : 261-81-23567
+                                <a href="" target="_blank">사업자정보 확인</a>
+                            </li>
+                            <li>통신판매업 : 제 2018-서울강남-01646 호</li>
+                            <li>
+                                주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동)
+                                <span class="info-divider"></span>
+                                대표이사 : 김슬아
+                            </li>
+                            <li>
+                                채용문의 :
+                                <a href="mailto:recruit@kurlycrop.com">recruit@kurlycrop.com</a>
+                            </li>
+                            <li>팩스: 070 - 7500 - 6098</li>
+                        </ul>
+                        <ul id="about-kurly__social-media">
+                            <li>
+                                <a href="https://instagram.com/marketkurly" target="_blank">
+                                    <img
+                                        src="/src/assets/icons/footer/icon_instagram.png"
+                                        alt="컬리 인스타그램 바로가기"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/marketkurly" target="_blank">
+                                    <img
+                                        src="/src/assets/icons/footer/icon_facebook.png"
+                                        alt="컬리 페이스북 바로가기"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://blog.naver.com/marketkurly" target="_blank">
+                                    <img
+                                        src="/src/assets/icons/footer/icon_blog.png"
+                                        alt="컬리 네이버블로그 바로가기"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://res.kurly.com/pc/ico/1810/ico_naverpost.png" target="_blank">
+                                    <img
+                                        src="/src/assets/icons/footer/icon_naverpost.png"
+                                        alt="컬리 네이버포스트 바로가기"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg" target="_blank">
+                                    <img
+                                        src="/src/assets/icons/footer/icon_youtube.png"
+                                        alt="컬리 유튜브 바로가기"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- 인증서 -->
+                <div id="footer-inner-bottom">
+                    <button>
+                        <img src="/src/assets/icons/footer/logo_isms.svg" alt="isms 로고" width="34" height="43.5" />
+                        <p>
+                            [인증범위] 컬리 쇼핑몰 서비스 개발·운영
+                            <br />
+                            (심사받지 않은 물리적 인프라 제외)
+                            <br />
+                            [유효기간] 2022.01.19 ~ 2025.01.18
+                        </p>
+                    </button>
+                    <button>
+                        <img
+                            src="/src/assets/icons/footer/logo_eprivacy.png"
+                            alt="eprivacy 로고"
+                            width="34"
+                            height="43.5"
+                        />
+                        <p>
+                            개인정보보호 우수 웹사이트 ·
+                            <br />
+                            개인정보처리시스템 인증 (ePRIVACY PLUS)
+                        </p>
+                    </button>
+                    <button>
+                        <img
+                            src="/src/assets/icons/footer/logo_tosspayments.svg"
+                            alt="payments 로고"
+                            width="102"
+                            height="43.5"
+                        />
+                        <p>
+                            토스페이먼츠 구매안전(에스크로)
+                            <br />
+                            서비스를 이용하실 수 있습니다.
+                        </p>
+                    </button>
+                    <button>
+                        <img
+                            src="/src/assets/icons/footer/logo_wooriBank.svg"
+                            alt="우리은행 로고"
+                            width="34"
+                            height="43.5"
+                        />
+                        <p>
+                            고객님이 현금으로 결제한 금액에 대해 우리은행과
+                            <br />
+                            채무지급보증 계약을 체결하여 안전거래를 보장하고
+                            <br />
+                            있습니다.
+                        </p>
+                    </button>
+                </div>
+            </div>
+
+            <div id="footer-bottom">
+                컬리에서 판매되는 상품 중에는 컬리에 입점한 개별 판매자가 판매하는 마켓플레이스(오픈마켓) 상품이
+                포함되어 있습니다.
+                <br />
+                마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서 통신판매의 당사자가 아닙니다. 컬리는 해당
+                상품의 주문, 품질, 교환/환불 등 의무와 책임을 부담하지 않습니다.
+                <em>© KURLY CORP. ALL RIGHTS RESERVED</em>
+            </div>
+        </footer>
+
+        <!-- <section data-include-file="/src/pages/includes/top-banner.html" class="top-banner-wrap includeJs"></section>
     <header data-include-file="/src/pages/includes/header.html" class="header-wrap includeJs"></header>
     <nav data-include-file="/src/pages/includes/nav.html" class="nav-wrap includeJs"></nav>
     <section data-include-file="/src/pages/includes/event.html" class="event-wrap includeJs"></section>
@@ -48,7 +1542,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', includeHtml);
-    </script>
-</body>
-
+    </script> -->
+    </body>
 </html>
